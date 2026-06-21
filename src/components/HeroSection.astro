@@ -1,0 +1,105 @@
+---
+/**
+ * Hero Section
+ *
+ * Background image: add your photo to /public/images/hero/hero-bg.jpg
+ * (Smeal building or trading room — whichever you prefer as the default).
+ * The component gracefully falls back to the navy gradient if the file
+ * isn't present yet.
+ */
+---
+
+<section
+  id="hero"
+  class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+  style="background-color: var(--color-navy);"
+  aria-label="Welcome to the Nittany Lion Fund"
+>
+  <!-- Background image with parallax -->
+  <div
+    class="parallax-bg absolute inset-0 w-full h-full scale-110"
+    aria-hidden="true"
+    style="
+      background-image: url('/images/board-hero.webp');
+      background-size: cover;
+      background-position: center top;
+      will-change: transform;
+    "
+  ></div>
+
+  <!-- Dark gradient overlay -->
+  <div
+    class="absolute inset-0"
+    aria-hidden="true"
+    style="background: linear-gradient(
+      160deg,
+      rgba(0,16,48,0.72) 0%,
+      rgba(0,30,68,0.78) 50%,
+      rgba(0,10,30,0.88) 100%
+    );"
+  ></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-3xl mx-auto">
+
+    <!-- Logo mark -->
+    <div
+      class="mb-8"
+      style="animation: fade-up 0.7s var(--ease-smooth) 0.1s both;"
+    >
+      <img
+        src="/images/logos/nlf-logo.png"
+        alt="Nittany Lion Fund"
+        class="h-20 sm:h-24 w-auto mx-auto drop-shadow-2xl"
+        width="96"
+        height="96"
+        onerror="this.style.display='none'"
+        fetchpriority="high"
+      />
+    </div>
+
+    <!-- Headline -->
+    <h1
+      class="font-serif font-bold text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight drop-shadow-xl"
+      style="animation: fade-up 0.8s var(--ease-smooth) 0.25s both;"
+    >
+      The Nittany Lion Fund
+    </h1>
+
+    <!-- Tagline -->
+    <p
+      class="mt-4 text-white/80 font-sans font-light text-lg sm:text-xl md:text-2xl tracking-wide"
+      style="animation: fade-up 0.8s var(--ease-smooth) 0.4s both;"
+    >
+      Penn State Students Managing Millions
+    </p>
+
+    <!-- CTA buttons -->
+    <div
+      class="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+      style="animation: fade-up 0.8s var(--ease-smooth) 0.55s both;"
+    >
+      <a href="/prospective-students" class="btn-primary">
+        Learn More
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+      <a href="/contact" class="btn-outline">
+        Get in Touch
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a
+    href="#stats"
+    class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 text-white/60 hover:text-white transition-colors scroll-chevron"
+    aria-label="Scroll to learn more"
+    style="animation: fade-in 1s ease 1s both;"
+  >
+    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+    </svg>
+  </a>
+</section>

@@ -1,0 +1,83 @@
+---
+const year = new Date().getFullYear();
+
+const links = [
+  {
+    heading: 'Navigation',
+    items: [
+      { label: 'Home',               href: '/' },
+      { label: 'Prospective Students', href: '/prospective-students' },
+      { label: 'Recruiters',          href: '/recruiters' },
+      { label: 'Meet the Team',       href: '/team' },
+      { label: 'Contact',             href: '/contact' },
+    ],
+  },
+  {
+    heading: 'Resources',
+    items: [
+      { label: 'PSIA',          href: '/psia' },
+      { label: 'Job Placement', href: '/job-placement' },
+      { label: 'History',       href: '/history' },
+      { label: 'Our Reports',   href: 'https://bit.ly/NLFMonthlyReports' },
+    ],
+  },
+];
+---
+
+<footer
+  class="text-white"
+  style="background-color:var(--color-navy-dark)"
+  role="contentinfo"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10">
+
+    <!-- Top grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-white/10">
+
+      <!-- Brand -->
+      <div>
+        <a href="/" class="flex items-center gap-3 mb-4" aria-label="Nittany Lion Fund">
+          <img
+            src="/images/logos/nlf-logo.png"
+            alt="NLF Logo"
+            class="h-10 w-auto"
+            onerror="this.style.display='none'"
+          />
+          <span class="font-serif font-semibold text-lg">Nittany Lion Fund</span>
+        </a>
+        <p class="text-white/60 text-sm leading-relaxed max-w-xs">
+          Penn State students managing millions — a student-run investment fund
+          at the Smeal College of Business since 2005.
+        </p>
+      </div>
+
+      <!-- Link columns -->
+      {links.map((col) => (
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">
+            {col.heading}
+          </h3>
+          <ul class="space-y-2.5">
+            {col.items.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-sm text-white/65 hover:text-white transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/40 text-xs">
+      <p>© {year} Nittany Lion Fund. All rights reserved.</p>
+      <p>Smeal College of Business · Penn State University</p>
+    </div>
+
+  </div>
+</footer>

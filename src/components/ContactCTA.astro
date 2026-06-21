@@ -1,0 +1,66 @@
+---
+/**
+ * Contact CTA Section
+ *
+ * Background image: /public/images/contact-bg.jpg
+ * (Use a photo that conveys community — trading floor, campus, group shot, etc.)
+ */
+---
+
+<section
+  id="contact-cta"
+  class="relative py-28 sm:py-36 overflow-hidden"
+  aria-labelledby="contact-cta-heading"
+>
+  <!-- Background image with navy-dark fallback -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    aria-hidden="true"
+    style="background-image: url('/images/contact-bg.jpg'); background-color: var(--color-navy-dark);"
+  ></div>
+  <!-- Overlay -->
+  <div
+    class="absolute inset-0"
+    aria-hidden="true"
+    style="background: linear-gradient(135deg, rgba(0,10,30,0.88) 0%, rgba(0,30,68,0.80) 100%);"
+  ></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+    <div class="reveal">
+      <p class="section-label mb-4" style="color: var(--color-pugh);">Connect With Us</p>
+
+      <h2
+        id="contact-cta-heading"
+        class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-4"
+      >
+        Let's Get in Touch
+      </h2>
+
+      <p class="text-white/70 text-base sm:text-lg mb-10">
+        We welcome inquiries from students, recruiters, and the general public.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="btn-primary">
+          Contact Us
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLScZFf1tRzzj9JyAMnJrlisv_zSEPj23b9Gfy98qEKdZYFv2Sw/viewform"
+          class="btn-outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join Our Email List
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,332 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const events = [
+  { year: '1998', event: 'Rogers Family Trading Room Opens' },
+  { year: '1999', event: 'Penn State Investment Association (PSIA) Created' },
+  { year: '2003', event: 'Planning for the NLF Begins' },
+  { year: '2005', event: 'NLF Inception: 43 Investors / $2.3 MM AUM' },
+  { year: '2008', event: 'Jim Cramer visits Penn State and meets with NLF fund managers' },
+  { year: '2009', event: '5th Anniversary of NLF: 68 Investors / $4.3 MM AUM' },
+  { year: '2010', event: 'NLF Passes 100 Students Placed on Wall St.' },
+  { year: '2013', event: 'NLF Students Appear on Money with Melissa Francis on Fox Business' },
+  { year: '2014', event: '10th Anniversary of NLF: 77 Investors / $6.9 MM AUM' },
+  { year: '2015', event: 'NLF Students Advance to CFA Investment Research Challenge Regionals (Americas)' },
+  { year: '2016', event: 'NLF Passes 200 Students Placed on Wall St.' },
+  { year: '2019', event: '15th Anniversary of NLF: 77 Investors / $10.1 MM AUM' },
+  { year: '2020', event: 'NLF Students Advance to CFA Investment Research Challenge Regionals (Americas)' },
+  { year: '2021', event: 'NLF passes 300 Students Placed on Wall St.' },
+  { year: '2022', event: 'First post-Coronavirus pandemic Wall St. Trip' },
+  { year: '2023', event: 'NLF Students Place First in CFA Investment Research Challenge (Pittsburgh)' },
+  { year: '2024', event: "NLF's First-Ever Fireside Chat Fundraiser Benefiting THON" },
+  { year: '2025', event: 'NLF 20-Year Anniversary and $20 MM' },
+];
+---
+
+<Layout
+  title="History"
+  description="The history of the Nittany Lion Fund — from a paper portfolio in 1999 to a $20 million student-managed investment fund."
+>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section
+    class="relative flex items-center justify-center overflow-hidden"
+    style="min-height: 48vh; background-color: var(--color-navy);"
+    aria-labelledby="history-hero-heading"
+  >
+    <div
+      class="absolute inset-0 bg-cover bg-no-repeat"
+      aria-hidden="true"
+      style="background-image: url('/images/history-hero.jpg'); background-position: center center;"
+    ></div>
+    <div
+      class="absolute inset-0"
+      aria-hidden="true"
+      style="background: linear-gradient(160deg, rgba(0,10,30,0.60) 0%, rgba(0,20,55,0.70) 100%);"
+    ></div>
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-24 max-w-3xl mx-auto">
+      <p class="section-label mb-4" style="color: var(--color-pugh);">Our Story</p>
+      <h1
+        id="history-hero-heading"
+        class="font-serif font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight"
+        style="animation: fade-up 0.8s var(--ease-smooth) 0.1s both;"
+      >
+        History
+      </h1>
+    </div>
+  </section>
+
+  <!-- ── Intro: text + video ───────────────────────────────────── -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+        <!-- Left: copy -->
+        <div class="reveal">
+          <p class="section-label mb-4">Our Foundation</p>
+          <h2
+            class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+            style="color: var(--color-navy);"
+          >
+            Learn about<br/>where we started
+          </h2>
+          <p class="text-base sm:text-lg leading-relaxed" style="color: var(--color-charcoal);">
+            What started as an educational organization and mock stock portfolio with three founding
+            members has now grown to one of the most prestigious financial organizations in the
+            country with over 50 active NLF Fund Managers.
+          </p>
+        </div>
+
+        <!-- Right: video placeholder -->
+        <div class="reveal" style="transition-delay: 150ms;">
+          <div
+            class="relative w-full rounded-2xl overflow-hidden flex items-center justify-center"
+            style="aspect-ratio: 16/9; background: var(--color-navy-dark); box-shadow: 0 8px 40px rgba(0,30,68,0.20);"
+          >
+            <!-- Replace this div with an <iframe> embed when ready -->
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-4">
+              <div
+                class="flex items-center justify-center rounded-full transition-transform hover:scale-110 cursor-pointer"
+                style="width: 72px; height: 72px; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.30);"
+              >
+                <svg class="w-8 h-8 ml-1" fill="white" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <p class="text-sm font-medium" style="color: rgba(255,255,255,0.45);">Video coming soon</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Timeline ──────────────────────────────────────────────── -->
+  <section class="py-20 sm:py-28" style="background: var(--color-cream);" aria-label="NLF Timeline">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-16 reveal">
+        <p class="section-label mb-3">Milestones</p>
+        <h2 class="font-serif font-bold text-3xl sm:text-4xl" style="color: var(--color-navy);">
+          Two Decades of Excellence
+        </h2>
+      </div>
+
+      <div class="timeline">
+        {events.map((e, i) => (
+          <div class={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}>
+            <div class="timeline-card">
+              <div class="year">{e.year}</div>
+              <p class="event-text">{e.event}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Quote + Narrative ─────────────────────────────────────── -->
+  <section class="py-20 sm:py-28 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Pull quote -->
+      <div class="reveal mb-16 text-center">
+        <svg class="w-10 h-10 mx-auto mb-6 opacity-20" fill="var(--color-navy)" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+        </svg>
+        <blockquote
+          class="font-serif font-bold text-xl sm:text-2xl lg:text-3xl leading-snug mb-6"
+          style="color: var(--color-navy);"
+        >
+          "Our inspiration was to develop something that was truly unique, something that was
+          differentiated from all the other colleges that existed across the states."
+        </blockquote>
+        <p class="text-sm font-semibold" style="color: var(--color-slate);">
+          — Sachin Aggarwal, Founding Member of PSIA and the Nittany Lion Fund, '04 Fin
+        </p>
+      </div>
+
+      <!-- Narrative -->
+      <div class="reveal space-y-6 text-base sm:text-lg leading-relaxed" style="color: var(--color-charcoal);">
+        <p>
+          The Penn State Investment Association (PSIA) was founded in the fall of 1999 with the
+          intention of providing students with a strong foundation in the functioning of the capital
+          markets. In designing the organization, the primary founders, Sachin Aggrawal, Ali
+          Chaudhry, and Nathan Kline sought to involve students in the research, analysis, and
+          maintenance of a securities portfolio using a hands-on approach that would effectively
+          bridge the gap between classroom concepts and real-world situations.
+        </p>
+        <p>
+          Moving forward to the Spring 2000 semester, the club existed in a trial phase and assumed
+          the role of a provisional, not yet official, organization. At this point, the club
+          maintained its exclusivity and carried out general meetings accordingly. At first,
+          decisions were primarily made regarding geographic regions, and research chairs reflected
+          these areas as well. However, concentration shifted to sectors more closely reflecting
+          the S&amp;P shortly thereafter. Obtaining the authorization of the University for "official
+          organization" status was of paramount importance during this period and was successfully
+          granted. The founders attribute the ease of acceptance to PSIA's interactive and realistic
+          qualities, which differentiate it from virtually any other organization.
+        </p>
+        <p>
+          As interest in the club began to grow, the student leaders began to brainstorm ideas on
+          how to turn the paper portfolio into a real fund with actual money. Although several
+          attempts had been made in the past, this goal did not become a reality until 2004 when a
+          team of students led by Sean Spillman and Jon Wyss assembled a marketing plan and business
+          structure for what would eventually become the Nittany Lion Fund (NLF). The students
+          presented the idea to faculty and convinced Professor J. Randall Woolridge to sign on.
+          Soon after, pitches were made to Penn State alumni, and the NLF received initial
+          investment commitments.
+        </p>
+        <p>
+          In January 2005, the first trades were made, and the Nittany Lion Fund, LLC was born. The
+          launch of the NLF was the culmination of the efforts of many groups and individuals. These
+          include: the students involved in PSIA, both past and present, who pushed for the
+          opportunity to invest real capital; the administration of Penn State and the Smeal College
+          of Business, who provided both financial and administrative support for the formation of
+          the Fund; the Fund's Co-Managers, Board of Directors and Oversight Committee, who agreed
+          to provide the leadership and guidance for the Fund; and last, but certainly not least,
+          its investors, who were willing to invest the capital to make it all happen.
+        </p>
+        <p>
+          As members of the Penn State Investment Association, the student fund managers had managed
+          a paper stock portfolio for several years prior to the formation of the Nittany Lion Fund.
+          This experience proved valuable in gaining insights into the investment process through
+          the evaluation of stocks and overall portfolio management. However, the formation of the
+          Nittany Lion Fund in January 2005 challenged the student managers because they were
+          suddenly investing real dollars and managing a real portfolio. The accountability for
+          actions increased dramatically for all involved.
+        </p>
+        <p>
+          Currently, the Nittany Lion Fund and PSIA co-exist. The Nittany Lion Fund is a
+          student-managed investment fund with millions of dollars in investor assets. PSIA is the
+          student organization that assists the Nittany Lion Fund, LLC, and is open for students of
+          all majors and experience levels to join.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ── Timeline ── */
+  .timeline {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* Center vertical line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent 0%, var(--color-pugh) 5%, var(--color-pugh) 95%, transparent 100%);
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 46%;
+    margin-bottom: 2.25rem;
+  }
+
+  .timeline-item.left {
+    margin-right: auto;
+    padding-right: 2.5rem;
+  }
+
+  .timeline-item.right {
+    margin-left: auto;
+    padding-left: 2.5rem;
+  }
+
+  /* Center dot */
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 1.35rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-navy);
+    border: 3px solid var(--color-pugh);
+    box-shadow: 0 0 0 3px rgba(77,136,190,0.25);
+  }
+  .timeline-item.left::after  { right: -7px; }
+  .timeline-item.right::after { left: -7px; }
+
+  /* Connector line from card to dot */
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: calc(1.35rem + 4px);
+    height: 2px;
+    background: rgba(77,136,190,0.30);
+  }
+  .timeline-item.left::before  { right: 7px;  left: auto; width: 2rem; }
+  .timeline-item.right::before { left: 7px; right: auto; width: 2rem; }
+
+  .timeline-card {
+    background: #fff;
+    border-radius: 0.875rem;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 2px 16px rgba(0,30,68,0.08);
+    border-top: 3px solid var(--color-pugh);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .timeline-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0,30,68,0.13);
+  }
+
+  .year {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--color-navy);
+    line-height: 1;
+    margin-bottom: 0.375rem;
+  }
+
+  .event-text {
+    font-size: 0.9rem;
+    color: var(--color-charcoal);
+    line-height: 1.5;
+  }
+
+  /* Mobile: single left-rail column */
+  @media (max-width: 640px) {
+    .timeline::before {
+      left: 1.25rem;
+    }
+    .timeline-item,
+    .timeline-item.left,
+    .timeline-item.right {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 3.5rem;
+      padding-right: 0;
+    }
+    .timeline-item::after,
+    .timeline-item.left::after,
+    .timeline-item.right::after {
+      left: calc(1.25rem - 7px);
+      right: auto;
+    }
+    .timeline-item::before,
+    .timeline-item.left::before,
+    .timeline-item.right::before {
+      left: calc(1.25rem + 7px);
+      right: auto;
+      width: 1.25rem;
+    }
+  }
+</style>

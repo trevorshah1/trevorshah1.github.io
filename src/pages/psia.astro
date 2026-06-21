@@ -1,0 +1,355 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const YELLOW = '#F5C518';
+
+const features = [
+  {
+    icon: 'calendar',
+    title: 'Weekly Meetings',
+    body: 'Attend weekly meetings to learn about fundamental financial concepts, the markets, and investing to prepare yourself for a career in the finance industry.',
+  },
+  {
+    icon: 'users',
+    title: 'Sunday Breakouts',
+    body: 'Meet with a specific sector to learn more about the sector\'s industries, companies, and additional financial concepts not covered in the weekly PSIA meetings.',
+  },
+  {
+    icon: 'book',
+    title: 'Canvas Access',
+    body: 'Access educational resources to prepare you for Wall Street interviews, copies of previous presentations, and access to other events and resources.',
+  },
+  {
+    icon: 'network',
+    title: 'Peer Networking',
+    body: 'Network with current Nittany Lion Fund managers and be able to mock interview with them to prepare for Wall Street and Nittany Lion Fund interviews.',
+  },
+  {
+    icon: 'trophy',
+    title: 'Competitions',
+    body: 'Participate in our comprehensive stock pitch competition, where you can present a company to buy in front of current Nittany Lion Fund managers to gain real-world experience.',
+  },
+];
+
+const weeks = [
+  {
+    week: 'Week 1', topic: 'PSIA and NLF Introduction',
+    gbm: 'In our first PSIA General Body meeting, you will learn more about the Nittany Lion Fund and our sector teams, our history and structure, and a general overview of the schedule for the rest of the semester. At the end of the meeting, you will have the opportunity to sign up for a sector and network with Fund Managers and connect with them!',
+    sbm: 'No sector breakout meeting this week! Take this time to sign up for a sector and learn more about it before next week!',
+  },
+  {
+    week: 'Week 2', topic: 'Senior Panel/Meet your Sector',
+    gbm: 'During this PSIA meeting, you will hear from several of our senior Nittany Lion Fund Managers that will discuss their Penn State experience, their journey joining the Nittany Lion Fund, as well as their junior internship experience. PSIA Analysts will also be able to ask their own questions to the panel as well.',
+    sbm: 'At your first sector breakout meeting, you will meet with your respective sector\'s team and learn more about the sector, including their holdings and outlook for the semester. Additionally, your sector will go over the Sector Breakout Meeting schedule for the remainder of the semester and give you the opportunity to connect with them individually afterward.',
+  },
+  {
+    week: 'Week 3', topic: 'Intro to Investing, Cap IQ, and FactSet/Networking 101',
+    gbm: 'At this PSIA meeting, you will learn more about investing and basic finance terminology. We will also go over several applications available for use in the Rogers Family Trading Room, including S&P Capital IQ, FactSet Workstation, and Bloomberg Terminal. We will walk you through how to create an account for each, in addition to the useful features available for each piece of software that you can use throughout your college career.',
+    sbm: 'During this sector breakout meeting, you will learn more about the networking process, including how to send networking emails, how to conduct a networking call, and other important information about the networking and recruitment process. After this sector breakout meeting, we encourage PSIA analysts to network with their respective sector to learn more about our Fund Managers and apply their new networking skills.',
+  },
+  {
+    week: 'Week 4', topic: 'Avenues within Finance/Accounting',
+    gbm: 'Have you ever heard of "Buy vs. Sell side" in finance and wonder what that actually means? At this PSIA meeting, we will go over the various career paths within finance and differentiate between the buy and sell side within the financial industry. We will talk about investment banking, sales & trading, asset management, and more.',
+    sbm: 'Accounting is the language of business and the most fundamental subject to learn for Wall Street interviews. At this sector breakout meeting, your sector will go over the three main accounting statements, including the income statement, balance sheet, and statement of cash flows. We will discuss how the accounting statements work, the important line items within them, and how they all link together.',
+  },
+  {
+    week: 'Week 5', topic: 'Understanding News/Comps & Ratios',
+    gbm: 'One of the most important habits to get into while studying finance is to keep up with the news. During this PSIA meeting, we will go over how to better understand and analyze news and discuss how it affects the financial markets. We will also go over various resources that you can use for news, in addition to how to sign up for them as a Penn State student.',
+    sbm: 'An important method of being able to evaluate a company is to compare it against its peers within the market. In this sector breakout meeting, your sector will teach you how to compare a company to its competitors, including how to pick appropriate competitors and the methods of analyzing a company with its comparables.',
+  },
+  {
+    week: 'Week 6', topic: 'Market Outlook & Interview Prep/TVM, WACC, CAPM',
+    gbm: 'As we get closer to Nittany Lion Fund interviews, it is time to start applying the knowledge that you have gained over the last few weeks of meetings to start preparing for a Wall Street job interview. During this PSIA meeting, we will teach you how to create a market outlook that can be used in finance interviews and give you other tips for the interview process.',
+    sbm: 'During this sector breakout meeting, your sector will teach you the important formulas and terms that you need to know to prepare for finance interviews and the next sector breakout meeting on discounted cash flow. This includes the terminal value method (TVM), weighted average cost of capital (WACC), and the capital asset pricing model (CAPM).',
+  },
+  {
+    week: 'Week 7', topic: 'Analyzing an Investment/DCF',
+    gbm: 'Analyzing an investment can be a complex process. There are various methods to evaluate a company, including fundamental and quantitative analysis. During this PSIA meeting, we will go over how to analyze a company and leverage research and recent news to make better investment decisions. At the end of this meeting, you will have the opportunity to sign up for the PSIA Stock Pitch Competition, where you can compete with other PSIA Analysts by creating a mock stock pitch to apply the skills that you have learned throughout the semester!',
+    sbm: 'A common valuation technique that we use within the Nittany Lion Fund is the discounted cash flow analysis, also known as a DCF. During this sector breakout meeting, your sector will run through a sample DCF model and explain the important components of a DCF valuation that impacts a company\'s projected share price.',
+  },
+  {
+    week: 'Week 8', topic: 'Mock Stock Pitch/Market Outlook',
+    gbm: 'One of the most important responsibilities Fund Managers have within the Nittany Lion Fund is pitching companies to either buy, sell, add, or shave within the portfolio. During this PSIA meeting, we will explain how we analyze companies for our own stock pitches by running through a recent pitch from one of our sector teams.',
+    sbm: 'During this sector breakout meeting, your sector will review how to create an adequate market outlook for Wall Street interviews. In addition, you will have the opportunity to get your market outlook reviewed by the Fund Managers within your sector to receive feedback and go over basic market-related job interview questions.',
+  },
+  {
+    week: 'Week 9', topic: 'Stock Pitch Competition Prelims/Resume Review',
+    gbm: 'Instead of a PSIA General Body Meeting this week, we will be conducting the preliminary rounds for the PSIA Stock Pitch Competition. Make sure that you sign up to compete for the chance to present your pitch in front of NLF Fund Managers!',
+    sbm: 'At this sector breakout meeting, your sector will go over how to format a professional resume for job interviews. You will also be able to share your resume with your sector so that they can review it and give constructive feedback in preparation for NLF Interview Week.',
+  },
+  {
+    week: 'Week 10', topic: 'Stock Pitch Competition Finals/Office Hours',
+    gbm: 'At our culminating PSIA meeting, the finalists for the PSIA Stock Pitch Competition will present their pitches to the entire PSIA General Body. At the end of the meeting, NLF Fund Managers will vote to crown our PSIA Stock Pitch Competition champion for the semester!',
+    sbm: 'For the last sector breakout meeting, your sector will hold office hours to answer any outstanding questions that you may have for upcoming Nittany Lion Fund interviews and practice any interview questions that you may need help with.',
+  },
+  {
+    week: 'Week 11', topic: 'NLF Interview Week',
+    gbm: 'Check our Instagram and the PSIA Canvas page for updates on NLF Interview Week scheduling and logistics.',
+    instagramLink: 'https://www.instagram.com/nittanylionfund/?hl=en',
+  },
+];
+---
+
+<Layout
+  title="PSIA — Penn State Investment Association"
+  description="The Penn State Investment Association (PSIA) is open to all students and serves as the educational gateway to the Nittany Lion Fund."
+>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section
+    class="relative flex items-center justify-center overflow-hidden"
+    style="min-height: 50vh; background-color: var(--color-navy);"
+    aria-labelledby="psia-hero-heading"
+  >
+    <div
+      class="absolute inset-0 bg-cover bg-no-repeat"
+      aria-hidden="true"
+      style="background-image: url('/images/psia-hero.jpg'); background-position: center 65%;"
+    ></div>
+    <div
+      class="absolute inset-0"
+      aria-hidden="true"
+      style="background: linear-gradient(160deg, rgba(0,10,30,0.58) 0%, rgba(0,24,60,0.66) 100%);"
+    ></div>
+
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-28 max-w-4xl mx-auto">
+      <p class="section-label mb-5" style="color: var(--color-pugh);">Student Organization</p>
+      <h1
+        id="psia-hero-heading"
+        class="font-serif font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight"
+        style="animation: fade-up 0.8s var(--ease-smooth) 0.1s both;"
+      >
+        Penn State<br />Investment Association
+      </h1>
+    </div>
+  </section>
+
+  <!-- ── Intro ─────────────────────────────────────────────────── -->
+  <section class="pt-20 sm:pt-24 pb-10 sm:pb-12 bg-white" aria-labelledby="psia-intro-heading">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <p class="section-label mb-4">About PSIA</p>
+      <h2
+        id="psia-intro-heading"
+        class="font-serif font-bold text-3xl sm:text-4xl leading-tight mb-6"
+        style="color: var(--color-navy);"
+      >
+        Preparing Penn State Students for the business world
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--color-charcoal);">
+        The Penn State Investment Association (PSIA) is open to all students from any major or
+        knowledge level. The organization serves in an educational capacity to both educate members
+        and provide tools to help Penn State students succeed in pursuing careers on Wall Street.
+        The organization also serves to educate members with an interest in personal investing.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Feature boxes ─────────────────────────────────────────── -->
+  <section class="pt-6 sm:pt-8 pb-16 sm:pb-20 bg-white" aria-label="PSIA membership benefits">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="reveal-group grid grid-cols-1 md:grid-cols-5 gap-5">
+        {features.map((f) => (
+          <div
+            class="flex flex-col gap-4 rounded-2xl p-6"
+            style="background: var(--color-navy); border: none;"
+          >
+            <div
+              class="inline-flex items-center justify-center w-10 h-10 rounded-xl flex-shrink-0"
+              style="background: rgba(255,255,255,0.15);"
+              aria-hidden="true"
+            >
+              {f.icon === 'calendar' && (
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              )}
+              {f.icon === 'users' && (
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              )}
+              {f.icon === 'book' && (
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              )}
+              {f.icon === 'network' && (
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              )}
+              {f.icon === 'trophy' && (
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              )}
+            </div>
+            <div>
+              <h3 class="font-serif font-semibold text-lg mb-2 text-white">
+                {f.title}
+              </h3>
+              <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.75);">
+                {f.body}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How to get involved ───────────────────────────────────── -->
+  <section
+    class="relative py-24 sm:py-32 overflow-hidden"
+    aria-labelledby="get-involved-heading"
+  >
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      aria-hidden="true"
+      style="background-image: url('/images/psia-bg.jpg'); background-color: var(--color-navy);"
+    ></div>
+    <div
+      class="absolute inset-0"
+      aria-hidden="true"
+      style="background: linear-gradient(160deg, rgba(0,10,30,0.78) 0%, rgba(0,24,60,0.84) 100%);"
+    ></div>
+
+    <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <p class="section-label mb-4" style="color: var(--color-pugh);">Join Us</p>
+      <h2
+        id="get-involved-heading"
+        class="font-serif font-bold text-3xl sm:text-4xl text-white leading-tight mb-6"
+      >
+        How to get involved
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed text-white/80 mb-10">
+        Anyone interested in joining the Nittany Lion Fund should attend PSIA meetings on Wednesday
+        nights or contact us for more information. Students, friends, and peers are welcome to
+        attend meetings.
+      </p>
+      <a
+        href="https://bit.ly/PSIASP23"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-full font-bold transition-all hover:brightness-90"
+        style="background: var(--color-pugh); color: #fff; padding: 0.85rem 2.25rem; font-size: 0.9375rem;"
+      >
+        Join PSIA Email List
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Semester schedule accordion ──────────────────────────── -->
+  <section class="py-20 sm:py-24 bg-white" aria-labelledby="schedule-heading">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-12 reveal">
+        <p class="section-label mb-4">Curriculum</p>
+        <h2
+          id="schedule-heading"
+          class="font-serif font-bold text-3xl sm:text-4xl leading-tight mb-4"
+          style="color: var(--color-navy);"
+        >
+          What to Expect: Semester Meeting Schedule
+        </h2>
+        <p class="text-base sm:text-lg" style="color: var(--color-charcoal);">
+          Below is a rough outline of a typical semester schedule.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-2 reveal" style="transition-delay: 100ms;">
+        {weeks.map((week) => (
+          <details class="psia-accordion group rounded-xl border overflow-hidden" style="border-color: #DDE3EA;">
+            <summary
+              class="flex items-center justify-between gap-4 cursor-pointer select-none py-4 pl-3 pr-5"
+              style="background: var(--color-cream); list-style: none;"
+            >
+              <span class="flex items-center gap-3 min-w-0">
+                <!-- "Week N" pill badge with yellow text -->
+                <span
+                  class="inline-flex items-center justify-center rounded-full flex-shrink-0 font-bold px-3 py-1"
+                  style={`background: var(--color-navy); color: ${YELLOW}; white-space: nowrap; font-size: 0.8rem;`}
+                >
+                  {week.week}
+                </span>
+                <!-- Topic label -->
+                <span class="font-sans font-semibold text-sm sm:text-base truncate" style="color: var(--color-navy);">
+                  {week.topic}
+                </span>
+              </span>
+              <!-- Chevron -->
+              <svg
+                class="w-4 h-4 flex-shrink-0 transition-transform duration-200 group-open:rotate-180"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+                style="color: var(--color-pugh);"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div
+              class="px-6 py-5 border-t text-sm sm:text-base leading-relaxed"
+              style="border-color: #DDE3EA; background: #fff;"
+            >
+              {week.gbm && (
+                <div class="mb-4">
+                  <p class="font-semibold mb-1.5" style="color: var(--color-navy); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+                    General Body Meeting
+                  </p>
+                  <p style="color: var(--color-charcoal);">{week.gbm}</p>
+                  {week.instagramLink && (
+                    <a
+                      href={week.instagramLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1.5 mt-3 font-semibold hover:underline"
+                      style="color: var(--color-pugh); font-size: 0.875rem;"
+                    >
+                      Follow us on Instagram
+                      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              )}
+              {week.sbm && (
+                <div class="pt-4" style="border-top: 1px solid #EEF0F3;">
+                  <p class="font-semibold mb-1.5" style="color: var(--color-pugh); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase;">
+                    Sector Breakout Meeting
+                  </p>
+                  <p style="color: var(--color-charcoal);">{week.sbm}</p>
+                </div>
+              )}
+            </div>
+          </details>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary::marker { display: none; }
+
+  details[open] > summary {
+    background-color: var(--color-navy) !important;
+  }
+  details[open] > summary span span:first-child {
+    background: rgba(255,255,255,0.12) !important;
+  }
+  details[open] > summary span span:last-child {
+    color: rgba(255,255,255,0.92) !important;
+  }
+  details[open] > summary > svg {
+    color: rgba(255,255,255,0.7) !important;
+  }
+</style>

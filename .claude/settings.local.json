@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Rename-Item \"C:\\\\Users\\\\trevo\\\\Desktop\\\\Nittany Lion Fund Website\\\\public\\\\images\\\\wall-street.jpg.jpg\" \"wall-street.jpg\")"
+    ]
+  }
+}

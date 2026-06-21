@@ -1,0 +1,85 @@
+---
+const stats = [
+  { value: 23,   suffix: ' MM',  prefix: '~$', label: 'Assets Under Management',  decimals: 2 },
+  { value: 95,   suffix: '%',    prefix: '~',  label: 'Job Placement Rate',        decimals: 0 },
+  { value: 400,  suffix: '+',    prefix: '',   label: 'Alumni',                    decimals: 0 },
+  { value: 70,   suffix: '+',    prefix: '',   label: 'Accredited Investors',      decimals: 0 },
+];
+---
+
+<section
+  id="stats"
+  class="relative py-20 sm:py-24"
+  style="background-color: var(--color-cream);"
+  aria-label="Fund statistics"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="reveal-group grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
+      {stats.map((stat) => (
+        <div class="text-center group">
+          <div
+            class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-none mb-3 tabular-nums whitespace-nowrap"
+            style="color: var(--color-navy);"
+          >
+            <span class="stat-prefix">{stat.prefix}</span>
+            <span
+              class="stat-counter"
+              data-target={stat.value}
+              data-decimals={stat.decimals}
+            >0</span>
+            <span class="stat-suffix">{stat.suffix}</span>
+          </div>
+          <p class="text-sm sm:text-base font-medium tracking-wide uppercase" style="color: var(--color-slate);">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function easeOutCubic(t: number) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function animateCounter(el: HTMLElement) {
+    const target   = parseFloat(el.dataset.target ?? '0');
+    const decimals = parseInt(el.dataset.decimals ?? '0', 10);
+    const duration = 3200;
+    const start    = performance.now();
+
+    function tick(now: number) {
+      const elapsed  = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const value    = target * easeOutCubic(progress);
+
+      el.textContent = value.toFixed(decimals);
+
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toFixed(decimals);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  const statsSection = document.querySelector('#stats');
+  let animated = false;
+
+  const statsObserver = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting && !animated) {
+        animated = true;
+        document.querySelectorAll('.stat-counter').forEach((el) => {
+          animateCounter(el as HTMLElement);
+        });
+        statsObserver.disconnect();
+      }
+    },
+    { threshold: 0.3 }
+  );
+
+  if (statsSection) statsObserver.observe(statsSection);
+</script>

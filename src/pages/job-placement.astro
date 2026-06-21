@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const YELLOW = '#F5C518';
+
+const P = '/images/logos/placement';
+const categories = [
+  {
+    name: 'Investment Banking: Bulge Bracket', id: 'bb', cols: 4,
+    firms: [
+      { name: 'Bank of America Merrill Lynch', logo: `${P}/01-bulge-bracket/Bank-of-America-Merrill-Lynch.webp` },
+      { name: 'Citigroup',                     logo: `${P}/01-bulge-bracket/Citigroup.webp` },
+      { name: 'Deutsche Bank',                 logo: `${P}/01-bulge-bracket/Deutsche-Bank.webp` },
+      { name: 'Goldman Sachs',                 logo: `${P}/01-bulge-bracket/Goldman-Sachs.webp` },
+      { name: 'JPMorgan Chase',                logo: `${P}/01-bulge-bracket/JPMorgan-Chase.webp` },
+      { name: 'Morgan Stanley',                logo: `${P}/01-bulge-bracket/Morgan-Stanley.webp` },
+      { name: 'UBS',                           logo: `${P}/01-bulge-bracket/UBS.webp` },
+    ],
+  },
+  {
+    name: 'Investment Banking: Middle Market', id: 'mm', cols: 5,
+    firms: [
+      { name: 'Brown Gibbons Lang & Co.',    logo: `${P}/02-middle-market/Brown-Gibbons-Lang-Co.webp` },
+      { name: 'CIT Group',                   logo: `${P}/02-middle-market/CIT-Group.webp` },
+      { name: 'Citizens',                    logo: `${P}/02-middle-market/citizens.webp` },
+      { name: 'CNB Bank',                    logo: `${P}/02-middle-market/CNB-Bank.jpg` },
+      { name: 'Cronheim Mortgage',           logo: `${P}/02-middle-market/Cronheim-Mortgage.jpg` },
+      { name: 'Jefferies',                   logo: `${P}/02-middle-market/Jefferies.webp` },
+      { name: 'Keefe Bruyette & Woods',      logo: `${P}/02-middle-market/Keefe-Bruyette-and-Woods.webp` },
+      { name: 'Lincoln Financial',           logo: `${P}/02-middle-market/Lincoln-Financial.jpg` },
+      { name: 'Lincoln International',       logo: `${P}/02-middle-market/Lincoln-International.webp` },
+      { name: 'Paddock Capital Markets',     logo: `${P}/02-middle-market/Paddock-Capital-Markets.webp` },
+      { name: 'Piper Sandler',               logo: `${P}/02-middle-market/Piper-Sandler.webp` },
+      { name: 'Raymond James',               logo: `${P}/02-middle-market/Raymond-James.webp` },
+      { name: 'SMBC Nikko Securities',       logo: `${P}/02-middle-market/SMBC-Nikko-Securities.jpg` },
+      { name: 'TD Cowen',                    logo: `${P}/02-middle-market/TD-Cowen.webp` },
+      { name: 'Wells Fargo',                 logo: `${P}/02-middle-market/Wells-Fargo.webp` },
+    ],
+  },
+  {
+    name: 'Investment Banking: Independent Advisory and Boutiques', id: 'boutique', cols: 4,
+    firms: [
+      { name: 'Ducera',                        logo: `${P}/03-boutique/Ducera.webp` },
+      { name: 'Duff & Phelps',                 logo: `${P}/03-boutique/Duff-Phelps.webp` },
+      { name: 'Evercore',                      logo: `${P}/03-boutique/Evercore.webp` },
+      { name: 'Financial Technology Partners', logo: `${P}/03-boutique/Finacnial-Technology-Parters.webp` },
+      { name: 'Guggenheim Partners',           logo: `${P}/03-boutique/Guggenheim-Partners.webp` },
+      { name: 'Leerink Partners',              logo: `${P}/03-boutique/Leerink-Parnters.jpg` },
+      { name: 'LionTree',                      logo: `${P}/03-boutique/LionTree.webp` },
+      { name: 'Moelis & Company',              logo: `${P}/03-boutique/Moelis-and-Company.webp` },
+      { name: 'Perella Weinberg Partners',     logo: `${P}/03-boutique/Perella-Weinburg-Partners.webp` },
+      { name: 'Torreya Partners',              logo: `${P}/03-boutique/Torreya-Partners.webp` },
+      { name: 'Tudor Pickering Holt & Co.',    logo: `${P}/03-boutique/Tudo-Picker-Holt-Co.jpg` },
+    ],
+  },
+  {
+    name: 'Private Equity/Alternative Asset Management', id: 'pe', cols: 4,
+    firms: [
+      { name: 'BDT & MSD Partners',       logo: `${P}/04-private-equity/BDT-and-MSD-Partners.webp` },
+      { name: 'Credit Suisse',            logo: `${P}/04-private-equity/Credit-Suisse.webp` },
+      { name: 'Exeter Property Group',    logo: `${P}/04-private-equity/Exeter-Property-Group.webp` },
+      { name: 'Fortress Investment Group',logo: `${P}/04-private-equity/Fortress-Investment-Group.webp` },
+      { name: 'KKR',                      logo: `${P}/04-private-equity/KKR.webp` },
+      { name: 'LLR Partners',             logo: `${P}/04-private-equity/llr.webp` },
+      { name: 'RockBridge Capital',       logo: `${P}/04-private-equity/RockBridge-Capital.webp` },
+    ],
+  },
+  {
+    name: 'Sales & Trading', id: 'st', cols: 5,
+    firms: [
+      { name: 'Balyasny Asset Management',         logo: `${P}/05-sales-trading/Balsany-Asset-Management.webp` },
+      { name: 'Bank of America Merrill Lynch',      logo: `${P}/05-sales-trading/Bank-of-America-Merrill-Lynch.webp` },
+      { name: 'Barclays Capital',                   logo: `${P}/05-sales-trading/Barclays-Capital.webp` },
+      { name: 'Citigroup',                          logo: `${P}/05-sales-trading/Citigroup.webp` },
+      { name: 'D.E. Shaw',                          logo: `${P}/05-sales-trading/D.E.-Shaw.webp` },
+      { name: 'Deutsche Bank',                      logo: `${P}/05-sales-trading/Deutsche-Bank.webp` },
+      { name: 'Goldman Sachs',                      logo: `${P}/05-sales-trading/Goldman-Sachs.webp` },
+      { name: 'JPMorgan Chase',                     logo: `${P}/05-sales-trading/JPMorgan-Chase.webp` },
+      { name: 'Morgan Stanley',                     logo: `${P}/05-sales-trading/Morgan-Stanley.webp` },
+      { name: 'SMB Capital',                        logo: `${P}/05-sales-trading/SMB-Capital.webp` },
+      { name: 'StoneX Group',                       logo: `${P}/05-sales-trading/StoneX-Group.webp` },
+      { name: 'Susquehanna International Group',    logo: `${P}/05-sales-trading/Susquehanna-International-Group.webp` },
+      { name: 'TD Waterhouse',                      logo: `${P}/05-sales-trading/TD-Waterhouse.webp` },
+      { name: 'Truist',                             logo: `${P}/05-sales-trading/Truist.webp` },
+      { name: 'UBS',                                logo: `${P}/05-sales-trading/UBS.webp` },
+    ],
+  },
+  {
+    name: 'Asset Management', id: 'am', cols: 5,
+    firms: [
+      { name: 'BlackRock',          logo: `${P}/06-asset-management/BlackRock.webp` },
+      { name: 'Federated Investors',logo: `${P}/06-asset-management/Federated-Investors.jpg` },
+      { name: 'JPMorgan Chase',     logo: `${P}/06-asset-management/JPMorgan-Chase.webp` },
+      { name: 'SEI Investments',    logo: `${P}/06-asset-management/SEI-Investments.webp` },
+      { name: 'Vanguard',           logo: `${P}/06-asset-management/Vanguard.webp` },
+    ],
+  },
+  {
+    name: 'Private Wealth Management', id: 'pwm', cols: 4,
+    firms: [
+      { name: 'Ameriprise',              logo: `${P}/07-private-wealth/Ameriprise.webp` },
+      { name: 'Bank of America Merrill Lynch', logo: `${P}/07-private-wealth/Bank-of-America-Merrill-Lynch.webp` },
+      { name: 'Citigroup',               logo: `${P}/07-private-wealth/Citigroup.webp` },
+      { name: 'Glenmede Financial',      logo: `${P}/07-private-wealth/Glemede-Finacnial.webp` },
+      { name: 'Goldman Sachs',           logo: `${P}/07-private-wealth/Goldman-Sachs.webp` },
+      { name: 'Modera Wealth Management',logo: `${P}/07-private-wealth/Modera-Wealth-Management.webp` },
+      { name: 'Morgan Stanley',          logo: `${P}/07-private-wealth/Morgan-Stanley.webp` },
+      { name: 'UBS',                     logo: `${P}/07-private-wealth/UBS.webp` },
+    ],
+  },
+  {
+    name: 'Research', id: 'research', cols: 4,
+    firms: [
+      { name: 'Bank of America Merrill Lynch',       logo: `${P}/08-research/Bank-of-America-Merrill-Lynch (1).webp` },
+      { name: 'Bloomberg',                           logo: `${P}/08-research/Bloomberg.webp` },
+      { name: 'Chatham Financial',                   logo: `${P}/08-research/Chatham-Financial.webp` },
+      { name: 'Federal Reserve Board of Governors',  logo: `${P}/08-research/Federal-Reserve-Board-of-Governors.webp` },
+      { name: 'Morgan Stanley',                      logo: `${P}/08-research/Morgan-Stanley.webp` },
+      { name: 'Truist',                              logo: `${P}/08-research/Truist.webp` },
+      { name: 'UBS',                                 logo: `${P}/08-research/UBS.webp` },
+    ],
+  },
+  {
+    name: 'Advisory/Consulting', id: 'advisory', cols: 4,
+    firms: [
+      { name: 'Deloitte',     logo: `${P}/09-advisory/Deloitte.webp` },
+      { name: 'Ernst & Young',logo: `${P}/09-advisory/Ermst-Young.webp` },
+      { name: 'IBM',          logo: `${P}/09-advisory/IBM-Corp.webp` },
+      { name: 'PwC',          logo: `${P}/09-advisory/PwC.webp` },
+    ],
+  },
+  {
+    name: 'Corporate Finance', id: 'cf', cols: 4,
+    firms: [
+      { name: 'Banco Agrícola',         logo: `${P}/10-corporate-finance/Banco-Agricola.webp` },
+      { name: 'Bank of America Merrill Lynch', logo: `${P}/10-corporate-finance/Bank-of-America-Merrill-Lynch.webp` },
+      { name: 'General Electric',       logo: `${P}/10-corporate-finance/General-Electric.webp` },
+      { name: 'Lockheed Martin',        logo: `${P}/10-corporate-finance/Lockhead-Martin.webp` },
+      { name: 'Lumen Technologies',     logo: `${P}/10-corporate-finance/Lumen-Technologies.webp` },
+      { name: 'PNB Bank',               logo: `${P}/10-corporate-finance/PNB-Bank.webp` },
+      { name: 'Vanguard',               logo: `${P}/10-corporate-finance/Vanguard.webp` },
+    ],
+  },
+  {
+    name: 'Marketing, Real Estate, Startups, and Other', id: 'other', cols: 3,
+    firms: [
+      { name: 'BHP Billiton',               logo: `${P}/11-other/BHP-Billiton-Marketing-Inc.jpg` },
+      { name: 'Blackstone',                 logo: `${P}/11-other/Blackstone.webp` },
+      { name: 'Expeditors International',   logo: `${P}/11-other/Expeditors-International.webp` },
+      { name: 'nference',                   logo: `${P}/11-other/nference.webp` },
+      { name: 'Royal Bank of Scotland',     logo: `${P}/11-other/Royal-Bank-of-Scotland.jpg` },
+      { name: 'Weebly',                     logo: `${P}/11-other/Weebly.webp` },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Job Placement"
+  description="Since 2005, the Nittany Lion Fund has placed over 300 alumni in prestigious firms across Wall Street and the world."
+>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section
+    class="relative flex items-center justify-center overflow-hidden"
+    style="min-height: 50vh; background-color: var(--color-navy);"
+    aria-labelledby="jp-hero-heading"
+  >
+    <!-- Wall Street background image -->
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      aria-hidden="true"
+      style="background-image: url('/images/wall-street.jpg');"
+    ></div>
+    <!-- Dark overlay — light enough to let the image show through -->
+    <div
+      class="absolute inset-0"
+      aria-hidden="true"
+      style="background: linear-gradient(160deg, rgba(0,10,30,0.52) 0%, rgba(0,20,50,0.60) 100%);"
+    ></div>
+
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-28 max-w-4xl mx-auto">
+      <p class="section-label mb-5" style={`color: ${YELLOW};`}>Alumni Network</p>
+      <h1
+        id="jp-hero-heading"
+        class="font-serif font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight"
+        style="animation: fade-up 0.8s var(--ease-smooth) 0.1s both;"
+      >
+        Initial Full-time Placements<br class="hidden sm:block" />
+        Since Inception
+      </h1>
+    </div>
+  </section>
+
+  <!-- ── Attracting section ────────────────────────────────────── -->
+  <section
+    class="py-20 sm:py-24"
+    style="background-color: var(--color-navy);"
+    aria-labelledby="attracting-heading"
+  >
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2
+        id="attracting-heading"
+        class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+        style={`color: ${YELLOW};`}
+      >
+        Attracting the eyes of worldwide firms
+      </h2>
+      <p class="text-base sm:text-lg leading-relaxed text-white/80 mb-10">
+        Since the Nittany Lion Fund's inception in 2005, we have placed over 300 alumni in
+        prestigious companies on Wall Street and across the world. Our placement career paths
+        include investment banking, private equity, sales &amp; trading, asset management,
+        private wealth management, research, advisory/consulting, corporate finance, and more.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 rounded-full font-bold transition-all hover:brightness-90"
+        style={`background: ${YELLOW}; color: #001030; padding: 0.75rem 2rem; font-size: 0.9375rem;`}
+      >
+        Contact Us
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ── Placements grid ───────────────────────────────────────── -->
+  <section class="bg-white" style="padding-top: 6rem; padding-bottom: 7rem;" aria-labelledby="placements-grid-heading">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center mb-14 reveal">
+        <p class="section-label mb-3">Our Alumni</p>
+        <h2
+          id="placements-grid-heading"
+          class="font-serif font-bold text-3xl sm:text-4xl"
+          style="color: var(--color-navy);"
+        >
+          Initial Full-Time Placements
+        </h2>
+      </div>
+
+      <!-- Categories -->
+      {categories.map((cat, idx) => (
+        <div>
+          {/* Separator — skip before first category */}
+          {idx > 0 && (
+            <div
+              aria-hidden="true"
+              style="width: 80%; height: 1px; background: #222; margin: 2.75rem auto;"
+            ></div>
+          )}
+
+          <div class="reveal">
+            <!-- Subsection heading -->
+            <h3
+              class="font-sans font-semibold text-base sm:text-lg mb-5"
+              style="color: var(--color-navy);"
+            >
+              {cat.name}
+            </h3>
+
+            <!-- Logo grid: 5 per row, last row centered (pyramid effect) -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+              {cat.firms.map((firm) => (
+                <div
+                  class="flex items-center justify-center"
+                  style="flex: none; width: calc((100% - 6rem) / 5);"
+                  title={firm.name}
+                >
+                  <img
+                    src={firm.logo}
+                    alt={firm.name}
+                    class="object-contain transition-all duration-200 hover:-translate-y-px"
+                    style="height: 120px; width: 100%; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));"
+                    loading="lazy"
+                    onerror={`this.style.display='none'; this.nextElementSibling.style.display='flex';`}
+                  />
+                  <span
+                    class="items-center justify-center text-xs font-semibold text-center px-2 leading-tight rounded"
+                    style="display:none; height:120px; width:100%; color: var(--color-navy); background: rgba(0,30,68,0.07);"
+                  >
+                    {firm.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+</Layout>

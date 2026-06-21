@@ -1,0 +1,15 @@
+{
+  "firms": [
+    { "name": "Goldman Sachs",   "logo": "/images/logos/placement/01-bulge-bracket/Goldman-Sachs.webp" },
+    { "name": "JPMorgan Chase",  "logo": "/images/logos/placement/01-bulge-bracket/JPMorgan-Chase.webp" },
+    { "name": "Morgan Stanley",  "logo": "/images/logos/placement/01-bulge-bracket/Morgan-Stanley.webp" },
+    { "name": "Bank of America", "logo": "/images/logos/placement/01-bulge-bracket/Bank-of-America-Merrill-Lynch.webp" },
+    { "name": "Citigroup",       "logo": "/images/logos/placement/01-bulge-bracket/Citigroup.webp" },
+    { "name": "Deutsche Bank",   "logo": "/images/logos/placement/01-bulge-bracket/Deutsche-Bank.webp" },
+    { "name": "UBS",             "logo": "/images/logos/placement/01-bulge-bracket/UBS.webp" },
+    { "name": "Evercore",        "logo": "/images/logos/placement/03-boutique/Evercore.webp" },
+    { "name": "Moelis & Company","logo": "/images/logos/placement/03-boutique/Moelis-and-Company.webp" },
+    { "name": "BlackRock",       "logo": "/images/logos/placement/06-asset-management/BlackRock.webp" }
+  ],
+  "_note": "Update this list each year with the actual Class of 2026 placements. Logo paths reuse files from /public/images/logos/placement/ subfolders — no need to duplicate files."
+}

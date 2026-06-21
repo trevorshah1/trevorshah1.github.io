@@ -1,0 +1,111 @@
+---
+/**
+ * Who We Are section
+ *
+ * Video: place your video file at /public/videos/who-we-are.mp4
+ * (or swap the <video> for an <iframe> embed if using YouTube/Vimeo).
+ * Poster image (thumbnail): /public/images/who-we-are-poster.jpg
+ */
+---
+
+<section
+  id="who-we-are"
+  class="py-24 sm:py-32 bg-white"
+  aria-labelledby="who-we-are-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+      <!-- Text column -->
+      <div class="reveal">
+        <p class="section-label mb-4">Our Story</p>
+
+        <h2
+          id="who-we-are-heading"
+          class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-8"
+          style="color: var(--color-navy);"
+        >
+          Who We Are
+        </h2>
+
+        <p class="text-base sm:text-lg leading-relaxed" style="color: var(--color-charcoal);">
+          The Nittany Lion Fund (NLF) is a student-managed investment fund (SMIF) in Penn State's
+          Smeal College of Business, where each semester, 40 undergraduate students manage an equity
+          portfolio of over $23 MM AUM for accredited investors. In conjunction, students participate
+          in an educational curriculum on stock valuation and portfolio management, attend
+          presentations by industry professionals on financial topics and career insights, and enter
+          various stock pitch competitions. Since its inception in 2005, the Nittany Lion Fund has
+          been an invaluable experience for students at Penn State.
+        </p>
+
+        <div class="mt-10">
+          <a href="/prospective-students" class="btn-primary" style="background:var(--color-navy);">
+            Discover NLF
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video column -->
+      <div class="reveal" style="transition-delay:150ms;">
+        <div
+          class="relative rounded-2xl overflow-hidden shadow-2xl aspect-video"
+          style="background:var(--color-navy);"
+        >
+          <!--
+            Replace this <video> with an <iframe> if using YouTube/Vimeo.
+            YouTube example:
+              <iframe
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                title="About the Nittany Lion Fund"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="absolute inset-0 w-full h-full border-0"
+              ></iframe>
+          -->
+          <video
+            class="w-full h-full object-cover"
+            controls
+            preload="none"
+            poster="/images/who-we-are-poster.jpg"
+            aria-label="About the Nittany Lion Fund"
+          >
+            <source src="/videos/who-we-are.mp4" type="video/mp4" />
+            <p class="p-6 text-white/70 text-sm">
+              Your browser doesn't support HTML video.
+              <a href="/videos/who-we-are.mp4" class="underline text-white">Download the video.</a>
+            </p>
+          </video>
+
+          <!-- Placeholder shown while video file hasn't been added yet -->
+          <div
+            id="video-placeholder"
+            class="absolute inset-0 flex flex-col items-center justify-center text-white/40 text-sm pointer-events-none"
+            aria-hidden="true"
+          >
+            <svg class="w-16 h-16 mb-3 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Video coming soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Hide placeholder once video loads its metadata
+  const video = document.querySelector('#who-we-are video') as HTMLVideoElement | null;
+  const placeholder = document.getElementById('video-placeholder');
+  if (video && placeholder) {
+    video.addEventListener('loadedmetadata', () => {
+      placeholder.style.display = 'none';
+    });
+  }
+</script>

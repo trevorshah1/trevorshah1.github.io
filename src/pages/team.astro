@@ -1,0 +1,213 @@
+---
+import Layout from '../layouts/Layout.astro';
+import teamData from '../data/team.json';
+
+const YELLOW = '#F5C518';
+const { executive_board, leadership, fund_managers } = teamData;
+const sectors = [...new Set(fund_managers.map((m) => m.sector))];
+
+// Shared placeholder icon markup
+const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`;
+---
+
+<Layout
+  title="Meet the Team"
+  description="Meet the students of the Nittany Lion Fund — our executive board, leadership, and fund managers."
+>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section
+    class="relative overflow-hidden"
+    style="background: var(--color-navy); padding: 7rem 1.5rem 5rem; min-height: 48vh; display: flex; align-items: center;"
+    aria-labelledby="team-heading"
+  >
+    <div class="absolute inset-0 bg-cover bg-no-repeat" aria-hidden="true"
+      style="background-image: url('/images/home-hero-replacement.png'); background-position: center center;"></div>
+    <div class="absolute inset-0" aria-hidden="true"
+      style="background: linear-gradient(160deg, rgba(0,10,30,0.68) 0%, rgba(0,20,55,0.75) 100%);"></div>
+    <div class="relative z-10 w-full text-center max-w-3xl mx-auto">
+      <h1
+        id="team-heading"
+        class="font-serif font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight"
+        style="animation: fade-up 0.8s var(--ease-smooth) 0.1s both;"
+      >
+        Meet the Team
+      </h1>
+      <div class="flex flex-wrap justify-center gap-4 mt-10" style="animation: fade-up 0.8s var(--ease-smooth) 0.25s both;">
+        {[
+          { label: 'Executive Board', href: '#exec' },
+          { label: 'Leadership',      href: '#leadership' },
+          { label: 'Fund Managers',   href: '#managers' },
+        ].map(({ label, href }) => (
+          <a
+            href={href}
+            class="font-bold rounded-full transition-all hover:opacity-85 hover:-translate-y-px"
+            style={`background:${YELLOW};color:var(--color-navy);font-size:0.9375rem;padding:0.65rem 1.75rem;`}
+          >{label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Executive Board ───────────────────────────────────────── -->
+  <section id="exec" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif font-bold text-3xl sm:text-4xl" style="color:var(--color-navy);">Executive Board</h2>
+      <div style="border-top:1px solid #000;margin:0.75rem 0 2.5rem;"></div>
+
+      <!-- Exactly 4 in one row -->
+      <div class="grid gap-6" style="grid-template-columns: repeat(4, 1fr);">
+        {executive_board.map((member) => (
+          <a
+            href={`/team/${member.slug}`}
+            class="group block rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+            style="box-shadow: 0 2px 12px rgba(0,30,68,0.10);"
+          >
+            <!-- Name/position header (navy) -->
+            <div class="px-4 py-4" style="background:var(--color-navy); min-height:5.5rem;">
+              <p class="font-serif font-bold text-white text-base leading-snug">
+                {member.name || <span style="opacity:0.35;">—</span>}
+              </p>
+              <p class="mt-1 text-xs font-medium tracking-wide" style="color:rgba(255,255,255,0.60);">
+                {member.position}
+              </p>
+            </div>
+            <!-- Headshot -->
+            <div style="aspect-ratio:1/1;background:#D8DCE6;overflow:hidden;">
+              {member.photo ? (
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Leadership ────────────────────────────────────────────── -->
+  <section id="leadership" class="py-20" style="background:var(--color-cream);">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif font-bold text-3xl sm:text-4xl" style="color:var(--color-navy);">Leadership</h2>
+      <div style="border-top:1px solid #000;margin:0.75rem 0 2.5rem;"></div>
+
+      <!-- 4 per row, last row centered -->
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;">
+        {leadership.map((member) => (
+          <a
+            href={`/team/${member.slug}`}
+            class="group block rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl"
+            style="flex:none;width:calc((100% - 4.5rem)/4);box-shadow:0 2px 12px rgba(0,30,68,0.09);"
+          >
+            <!-- Name/position header (navy) -->
+            <div class="px-4 py-4" style="background:var(--color-navy); min-height:5.5rem;">
+              <p class="font-serif font-bold text-white text-base leading-snug">
+                {member.name || <span style="opacity:0.35;">—</span>}
+              </p>
+              <p class="mt-1 text-xs font-medium tracking-wide" style="color:rgba(255,255,255,0.60);">
+                {member.position}
+              </p>
+            </div>
+            <!-- Headshot -->
+            <div style="aspect-ratio:1/1;background:#D0D4DE;overflow:hidden;">
+              {member.photo ? (
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Fund Managers ─────────────────────────────────────────── -->
+  <section id="managers" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-serif font-bold text-3xl sm:text-4xl" style="color:var(--color-navy);">Fund Managers</h2>
+      <p class="mt-1 font-semibold text-sm" style="color:var(--color-slate);">Filter by Sector</p>
+      <div style="border-top:1px solid #000;margin:0.75rem 0 1.5rem;"></div>
+
+      <!-- Sector filter pills -->
+      <div class="flex flex-wrap gap-2 mb-10">
+        <button class="sector-btn" data-sector="All"
+          style="background:var(--color-navy);color:#fff;border:2px solid var(--color-navy);font-size:0.8125rem;font-weight:600;padding:0.35rem 1rem;border-radius:9999px;cursor:pointer;transition:all 0.15s;">
+          All
+        </button>
+        {sectors.map((sector) => (
+          <button class="sector-btn" data-sector={sector}
+            style="background:transparent;color:var(--color-navy);border:2px solid #C4C9D4;font-size:0.8125rem;font-weight:600;padding:0.35rem 1rem;border-radius:9999px;cursor:pointer;transition:all 0.15s;">
+            {sector}
+          </button>
+        ))}
+      </div>
+
+      <!-- Manager cards: 4 per row, last row centered -->
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;" id="managers-grid">
+        {fund_managers.map((member) => (
+          <a
+            href={`/team/${member.slug}`}
+            class="manager-card group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            data-sector={member.sector}
+            style="flex:none;width:calc((100% - 4.5rem)/4);box-shadow:0 1px 6px rgba(0,30,68,0.08);"
+          >
+            <!-- Headshot -->
+            <div style="aspect-ratio:1/1;background:#E4E8EE;overflow:hidden;">
+              {member.photo ? (
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
+              )}
+            </div>
+            <!-- Info below -->
+            <div class="px-3 py-3">
+              <p class="font-semibold leading-snug" style="color:var(--color-navy);font-size:0.875rem;">
+                {member.name || '—'}
+              </p>
+              <p class="mt-0.5" style="color:var(--color-slate);font-size:0.75rem;">{member.position}</p>
+              <span class="inline-block mt-1.5 px-2 py-0.5 rounded-full text-xs font-semibold"
+                style="background:rgba(0,30,68,0.07);color:var(--color-navy);">
+                {member.sector}
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const btns  = document.querySelectorAll<HTMLButtonElement>('.sector-btn');
+  const cards = document.querySelectorAll<HTMLElement>('.manager-card');
+
+  btns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const sector = btn.dataset.sector!;
+      btns.forEach((b) => {
+        const active = b.dataset.sector === sector;
+        b.style.background  = active ? 'var(--color-navy)' : 'transparent';
+        b.style.color       = active ? '#fff' : 'var(--color-navy)';
+        b.style.borderColor = active ? 'var(--color-navy)' : '#C4C9D4';
+      });
+      cards.forEach((card) => {
+        card.style.display = (sector === 'All' || card.dataset.sector === sector) ? '' : 'none';
+      });
+    });
+  });
+</script>

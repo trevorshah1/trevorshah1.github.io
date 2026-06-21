@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PlacementsSection from '../components/PlacementsSection.astro';
+
+const YELLOW = '#F5C518';
+---
+
+<Layout
+  title="Recruiters"
+  description="Partner with the Nittany Lion Fund to recruit Penn State's top finance talent. Over 350 alumni placed on Wall Street and beyond since inception."
+>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section
+    class="relative flex items-center justify-center overflow-hidden"
+    style="min-height: 52vh; background-color: var(--color-navy);"
+    aria-labelledby="recruiters-hero-heading"
+  >
+    <!-- Background image — replace /images/wall-street.jpg with a recruiter-specific photo -->
+    <div
+      class="absolute inset-0 bg-cover bg-no-repeat"
+      aria-hidden="true"
+      style="
+        background-image: url('/images/recruiters-hero.jpg');
+        background-position: center 40%;
+        background-color: var(--color-navy);
+      "
+    ></div>
+    <!-- Overlay -->
+    <div
+      class="absolute inset-0"
+      aria-hidden="true"
+      style="background: linear-gradient(160deg, rgba(0,10,30,0.60) 0%, rgba(0,20,50,0.68) 100%);"
+    ></div>
+
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-24 max-w-3xl mx-auto">
+      <p class="section-label mb-4" style="color: var(--color-pugh);">Partner With Us</p>
+      <h1
+        id="recruiters-hero-heading"
+        class="font-serif font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight"
+        style="animation: fade-up 0.8s var(--ease-smooth) 0.1s both;"
+      >
+        Recruiters
+      </h1>
+      <p
+        class="mt-4 text-white/80 text-lg sm:text-xl font-light tracking-wide"
+        style="animation: fade-up 0.8s var(--ease-smooth) 0.25s both;"
+      >
+        Job placements on Wall Street<br/>and beyond
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Top 10 section ────────────────────────────────────────── -->
+  <section
+    class="py-20 sm:py-28"
+    style="background-color: var(--color-navy);"
+    aria-labelledby="top10-heading"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+
+      <h2
+        id="top10-heading"
+        class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+        style={`color: ${YELLOW};`}
+      >
+        Top 10 for Business School Recruiting
+      </h2>
+
+      <p class="text-white/80 text-base sm:text-lg leading-relaxed mb-10 max-w-3xl mx-auto">
+        Since inception, the Nittany Lion Fund has placed over 350 alumni on Wall Street and across
+        the world. We have placed students at various firms for various career paths, including
+        investment banking, sales &amp; trading, asset management, private equity, private wealth
+        management, equity research, consulting, corporate finance, and more. We also have numerous
+        other organizations and programs within the Smeal College of Business, including Leveraged
+        Lion Capital, Penn State Asset Management Group, Wall Street Bootcamp, and more that can
+        give recruiters the opportunity to speak to hundreds of Penn State Smeal students and meet
+        potential job candidates.
+      </p>
+
+      <a
+        href="/contact"
+        class="inline-flex items-center gap-2 font-bold rounded-full transition-all hover:opacity-85 hover:-translate-y-px"
+        style={`background: ${YELLOW}; color: var(--color-navy); font-size: 0.9375rem; padding: 0.75rem 2rem;`}
+      >
+        Contact Us
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── Placements preview ────────────────────────────────────── -->
+  <PlacementsSection />
+
+</Layout>

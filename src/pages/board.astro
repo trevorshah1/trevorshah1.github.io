@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+import boardData from '../data/board.json';
+
+const { current, past_chairmen } = boardData;
+---
+
+<Layout
+  title="Board of Directors"
+  description="Meet the Current Board of Directors of the Nittany Lion Fund at Penn State's Smeal College of Business."
+>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section
+    class="relative flex items-center justify-center overflow-hidden"
+    style="min-height: 48vh; background-color: var(--color-navy);"
+    aria-labelledby="board-hero-heading"
+  >
+    <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-24 max-w-3xl mx-auto">
+      <p class="section-label mb-4" style="color: var(--color-pugh);">Leadership &amp; Governance</p>
+      <h1
+        id="board-hero-heading"
+        class="font-serif font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight tracking-tight"
+        style="animation: fade-up 0.8s var(--ease-smooth) 0.1s both;"
+      >
+        Current Board of Directors
+      </h1>
+    </div>
+  </section>
+
+  <!-- ── Current Board ─────────────────────────────────────────── -->
+  <section class="py-20 sm:py-28 bg-white" aria-label="Current Board of Directors">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {current.map((member) => (
+          <div
+            class="reveal flex flex-col rounded-2xl overflow-hidden"
+            style="border: 1px solid #E4E8EF; box-shadow: 0 2px 16px rgba(0,30,68,0.07);"
+          >
+            <!-- Card header -->
+            <div
+              class="flex items-start justify-between gap-3 px-6 py-5"
+              style="background: var(--color-navy); border-bottom: 3px solid var(--color-pugh);"
+            >
+              <h2 class="font-serif font-bold text-white text-lg sm:text-xl leading-snug">
+                {member.name}
+              </h2>
+              {member.note && (
+                <span
+                  class="flex-shrink-0 text-xs font-bold tracking-wide rounded-full px-3 py-1 mt-0.5"
+                  style="background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.80); white-space: nowrap;"
+                >
+                  {member.note}
+                </span>
+              )}
+            </div>
+            <!-- Bio -->
+            <div class="px-6 py-5 flex-1" style="background: #FAFBFC;">
+              <p class="text-sm sm:text-base leading-relaxed" style="color: var(--color-charcoal);">
+                {member.bio}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Past Chairmen ─────────────────────────────────────────── -->
+  <section
+    class="py-20 sm:py-28"
+    style="background: var(--color-cream);"
+    aria-label="Past Chairmen"
+  >
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="mb-12 reveal">
+        <p class="section-label mb-3">Honoring Our Legacy</p>
+        <h2
+          class="font-serif font-bold text-3xl sm:text-4xl"
+          style="color: var(--color-navy);"
+        >
+          Past Chairmen
+        </h2>
+        <div style="border-top: 1px solid rgba(0,30,68,0.20); margin-top: 1rem;"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {past_chairmen.map((member) => (
+          <div
+            class="reveal flex flex-col rounded-2xl overflow-hidden"
+            style="border: 1px solid #D8DCE4; box-shadow: 0 2px 16px rgba(0,30,68,0.06);"
+          >
+            <!-- Card header -->
+            <div
+              class="px-6 py-5"
+              style="background: var(--color-navy-mid); border-bottom: 3px solid var(--color-pugh);"
+            >
+              <h3 class="font-serif font-bold text-white text-lg sm:text-xl leading-snug">
+                {member.name}
+              </h3>
+            </div>
+            <!-- Bio -->
+            <div class="px-6 py-5 flex-1" style="background: #F0F2F6;">
+              <p class="text-sm sm:text-base leading-relaxed" style="color: var(--color-charcoal);">
+                {member.bio}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,122 @@
+---
+/**
+ * Team Section
+ *
+ * Background image: /public/images/team-bg.jpg
+ * (the NLF photo the user will provide — trading room, group photo, etc.)
+ */
+---
+
+<!-- Meet the Team -->
+<section
+  id="meet-the-team"
+  class="relative py-28 sm:py-36 overflow-hidden"
+  aria-labelledby="team-heading"
+>
+  <!-- Background image with navy fallback -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('/images/team-bg.jpg'); background-color: var(--color-navy-mid);"
+    aria-hidden="true"
+  ></div>
+  <!-- Overlay — also ensures contrast when no image is loaded -->
+  <div
+    class="absolute inset-0"
+    aria-hidden="true"
+    style="background: linear-gradient(135deg, rgba(0,16,48,0.72) 0%, rgba(0,30,68,0.60) 100%);"
+  ></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl reveal">
+      <p class="section-label mb-4" style="color: var(--color-pugh);">Our People</p>
+
+      <h2
+        id="team-heading"
+        class="font-serif font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-6"
+      >
+        Meet the Team
+      </h2>
+
+      <p class="text-base sm:text-lg leading-relaxed mb-10" style="color: rgba(255,255,255,0.75);">
+        The Nittany Lion Fund consists of over 50 Penn State students that manage our portfolio
+        that covers all 11 sectors of the S&amp;P 500 and serve in other leadership roles.
+      </p>
+
+      <a href="/team" class="btn-primary">
+        Meet the Team
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Reports -->
+<section
+  id="reports"
+  class="py-20 sm:py-24"
+  style="background: var(--color-cream);"
+  aria-labelledby="reports-heading"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+
+      <div class="reveal">
+        <p class="section-label mb-4">Research & Analysis</p>
+        <h2
+          id="reports-heading"
+          class="font-serif font-bold text-3xl sm:text-4xl leading-tight mb-5"
+          style="color: var(--color-navy);"
+        >
+          Check Out Our Reports
+        </h2>
+        <p class="text-base sm:text-lg leading-relaxed" style="color: var(--color-charcoal);">
+          Our monthly and annual reports include information about our current holdings, alumni
+          updates, commentary on in-class visits, PSIA and Nittany Lion Fund updates, and more.
+        </p>
+      </div>
+
+      <div class="reveal flex lg:justify-end" style="transition-delay:150ms;">
+        <div
+          class="p-8 sm:p-10 rounded-2xl border w-full max-w-md"
+          style="background:white; border-color: var(--color-gray-light, #E8ECF0);"
+        >
+          <div
+            class="flex items-center justify-center w-12 h-12 rounded-xl mb-6"
+            style="background: var(--color-navy);"
+            aria-hidden="true"
+          >
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+
+          <h3 class="font-serif font-semibold text-xl mb-2" style="color: var(--color-navy);">
+            Monthly &amp; Annual Reports
+          </h3>
+          <p class="text-sm leading-relaxed mb-6" style="color: var(--color-slate);">
+            Holdings, alumni updates, in-class commentary, PSIA updates, and fund news — published
+            every month and compiled into an annual report.
+          </p>
+
+          <a
+            href="https://bit.ly/NLFMonthlyReports"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary w-full justify-center"
+            style="background: var(--color-navy);"
+          >
+            Read Our Reports
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

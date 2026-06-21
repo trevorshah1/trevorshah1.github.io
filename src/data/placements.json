@@ -1,0 +1,15 @@
+{
+  "featured": [
+    { "id": 1,  "name": "Goldman Sachs",   "logo": "/images/logos/banks/goldman-sachs.svg" },
+    { "id": 2,  "name": "Morgan Stanley",  "logo": "/images/logos/banks/morgan-stanley.svg" },
+    { "id": 3,  "name": "J.P. Morgan",     "logo": "/images/logos/banks/jp-morgan.svg" },
+    { "id": 4,  "name": "Bank of America", "logo": "/images/logos/banks/bank-of-america.svg" },
+    { "id": 5,  "name": "Citi",            "logo": "/images/logos/banks/citi.svg" },
+    { "id": 6,  "name": "Wells Fargo",     "logo": "/images/logos/banks/wells-fargo.svg" },
+    { "id": 7,  "name": "BlackRock",       "logo": "/images/logos/banks/blackrock.svg" },
+    { "id": 8,  "name": "Lazard",          "logo": "/images/logos/banks/lazard.svg" },
+    { "id": 9,  "name": "Jefferies",       "logo": "/images/logos/banks/jefferies.svg" },
+    { "id": 10, "name": "Evercore",        "logo": "/images/logos/banks/evercore.svg" }
+  ],
+  "note": "Update logos by adding SVG/PNG files to /public/images/logos/banks/ and matching the filename above."
+}

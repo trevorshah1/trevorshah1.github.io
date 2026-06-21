@@ -1,0 +1,219 @@
+---
+const navLinks = [
+  { label: 'Home', href: '/' },
+  {
+    label: 'Prospective Students',
+    href: '/prospective-students',
+    children: [
+      { label: 'Prospective Student', href: '/prospective-students' },
+      { label: 'Job Placement',        href: '/job-placement' },
+      { label: 'PSIA',                 href: '/psia' },
+    ],
+  },
+  { label: 'Recruiters', href: '/recruiters' },
+  {
+    label: 'Team',
+    href: '/team',
+    children: [
+      { label: 'Meet the Team',     href: '/team' },
+      { label: 'Board of Directors', href: '/board' },
+      { label: 'History',            href: '/history' },
+    ],
+  },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 right-0 z-50"
+  role="banner"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- ── Logo ─────────────────────────────────────────── -->
+      <a
+        href="/"
+        class="flex items-center gap-3 flex-shrink-0 group"
+        aria-label="Nittany Lion Fund — Home"
+      >
+        <img
+          src="/images/logos/nlf-logo-only-clear.png"
+          alt="NLF"
+          class="h-10 w-auto"
+          width="40"
+          height="40"
+          id="nlf-logo-img"
+          onerror="document.getElementById('nlf-logo-fallback').style.display='flex'; this.style.display='none';"
+        />
+        <!-- Text fallback shown when logo image isn't yet added -->
+        <span
+          id="nlf-logo-fallback"
+          class="hidden items-center justify-center w-10 h-10 rounded-full font-serif font-bold text-sm text-white border-2 border-white/40"
+          style="display:none;"
+          aria-hidden="true"
+        >NLF</span>
+      </a>
+
+      <!-- ── Desktop nav ───────────────────────────────────── -->
+      <nav aria-label="Primary navigation" class="hidden lg:flex items-center gap-0.5">
+        {navLinks.map((link) =>
+          link.children ? (
+            <div class="dropdown">
+              <button
+                class="flex items-center gap-1 px-4 py-2.5 text-sm font-medium text-white/85 hover:text-white rounded transition-colors"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {link.label}
+                <svg class="w-3.5 h-3.5 opacity-60 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                {link.children.map((child) => (
+                  <li role="none">
+                    <a href={child.href} role="menuitem">{child.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <a
+              href={link.href}
+              class="px-4 py-2.5 text-sm font-medium text-white/85 hover:text-white rounded transition-colors"
+            >
+              {link.label}
+            </a>
+          )
+        )}
+      </nav>
+
+      <!-- ── Search + mobile toggle ────────────────────────── -->
+      <div class="flex items-center gap-3">
+        <!-- Search -->
+        <form
+          action="/search"
+          method="get"
+          role="search"
+          aria-label="Site search"
+          class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/25 bg-white/8 backdrop-blur transition-all focus-within:bg-white/14 focus-within:border-white/40"
+        >
+          <label for="site-search" class="sr-only">Search site</label>
+          <svg class="w-4 h-4 text-white/55 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input
+            id="site-search"
+            name="q"
+            type="search"
+            placeholder="Search…"
+            autocomplete="off"
+            class="bg-transparent text-white placeholder-white/45 text-sm w-28 focus:w-40 outline-none transition-all"
+          />
+        </form>
+
+        <!-- Hamburger (mobile) -->
+        <button
+          id="mobile-menu-btn"
+          class="lg:hidden flex items-center justify-center w-10 h-10 text-white rounded"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg id="icon-menu"  class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Mobile menu ─────────────────────────────────────────── -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+      <span class="text-white font-serif font-semibold text-lg">Menu</span>
+      <button id="mobile-menu-close" class="p-2 text-white rounded" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <ul class="flex-1 px-4 py-4 space-y-1">
+      {navLinks.map((link) => (
+        <li>
+          {link.children ? (
+            <details class="group">
+              <summary class="flex items-center justify-between px-4 py-3 text-white font-medium rounded-lg cursor-pointer list-none hover:bg-white/8 transition-colors">
+                {link.label}
+                <svg class="w-4 h-4 opacity-60 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <ul class="mt-1 ml-4 pl-4 space-y-0.5 border-l border-white/15">
+                {link.children.map((child) => (
+                  <li>
+                    <a href={child.href} class="block px-3 py-2.5 text-sm text-white/75 hover:text-white rounded-lg transition-colors">
+                      {child.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          ) : (
+            <a href={link.href} class="block px-4 py-3 text-white font-medium rounded-lg hover:bg-white/8 transition-colors">
+              {link.label}
+            </a>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile search -->
+    <div class="px-4 py-4 border-t border-white/10">
+      <form action="/search" method="get" role="search" aria-label="Mobile search" class="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 bg-white/8">
+        <label for="mobile-search" class="sr-only">Search site</label>
+        <svg class="w-4 h-4 text-white/55" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+        <input id="mobile-search" name="q" type="search" placeholder="Search…" class="flex-1 bg-transparent text-white placeholder-white/45 text-sm outline-none" />
+      </form>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn      = document.getElementById('mobile-menu-btn');
+  const closeBtn = document.getElementById('mobile-menu-close');
+  const menu     = document.getElementById('mobile-menu');
+  const iconMenu  = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+
+  function openMenu() {
+    menu?.classList.add('open');
+    menu?.setAttribute('aria-hidden', 'false');
+    btn?.setAttribute('aria-expanded', 'true');
+    iconMenu?.classList.add('hidden');
+    iconClose?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu?.classList.remove('open');
+    menu?.setAttribute('aria-hidden', 'true');
+    btn?.setAttribute('aria-expanded', 'false');
+    iconMenu?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  btn?.addEventListener('click', openMenu);
+  closeBtn?.addEventListener('click', closeMenu);
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+</script>
