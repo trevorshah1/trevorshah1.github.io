@@ -133,59 +133,60 @@ const navLinks = [
     </div>
   </div>
 
-  <!-- ── Mobile menu ─────────────────────────────────────────── -->
-  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
-    <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
-      <span class="text-white font-serif font-semibold text-lg">Menu</span>
-      <button id="mobile-menu-close" class="p-2 text-white rounded" aria-label="Close menu">
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-
-    <ul class="flex-1 px-4 py-4 space-y-1">
-      {navLinks.map((link) => (
-        <li>
-          {link.children ? (
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-3 text-white font-medium rounded-lg cursor-pointer list-none hover:bg-white/8 transition-colors">
-                {link.label}
-                <svg class="w-4 h-4 opacity-60 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="mt-1 ml-4 pl-4 space-y-0.5 border-l border-white/15">
-                {link.children.map((child) => (
-                  <li>
-                    <a href={child.href} class="block px-3 py-2.5 text-sm text-white/75 hover:text-white rounded-lg transition-colors">
-                      {child.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </details>
-          ) : (
-            <a href={link.href} class="block px-4 py-3 text-white font-medium rounded-lg hover:bg-white/8 transition-colors">
-              {link.label}
-            </a>
-          )}
-        </li>
-      ))}
-    </ul>
-
-    <!-- Mobile search -->
-    <div class="px-4 py-4 border-t border-white/10">
-      <form action="/search" method="get" role="search" aria-label="Mobile search" class="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 bg-white/8">
-        <label for="mobile-search" class="sr-only">Search site</label>
-        <svg class="w-4 h-4 text-white/55" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-        <input id="mobile-search" name="q" type="search" placeholder="Search…" class="flex-1 bg-transparent text-white placeholder-white/45 text-sm outline-none" />
-      </form>
-    </div>
-  </nav>
 </header>
+
+<!-- ── Mobile menu (outside <header> to avoid backdrop-filter clipping) ── -->
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="flex items-center justify-between px-6 py-4 border-b border-white/10">
+    <span class="text-white font-serif font-semibold text-lg">Menu</span>
+    <button id="mobile-menu-close" class="p-2 text-white rounded" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <ul class="flex-1 px-4 py-4 space-y-1">
+    {navLinks.map((link) => (
+      <li>
+        {link.children ? (
+          <details class="group">
+            <summary class="flex items-center justify-between px-4 py-3 text-white font-medium rounded-lg cursor-pointer list-none hover:bg-white/8 transition-colors">
+              {link.label}
+              <svg class="w-4 h-4 opacity-60 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <ul class="mt-1 ml-4 pl-4 space-y-0.5 border-l border-white/15">
+              {link.children.map((child) => (
+                <li>
+                  <a href={child.href} class="block px-3 py-2.5 text-sm text-white/75 hover:text-white rounded-lg transition-colors">
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        ) : (
+          <a href={link.href} class="block px-4 py-3 text-white font-medium rounded-lg hover:bg-white/8 transition-colors">
+            {link.label}
+          </a>
+        )}
+      </li>
+    ))}
+  </ul>
+
+  <!-- Mobile search -->
+  <div class="px-4 py-4 border-t border-white/10">
+    <form action="/search" method="get" role="search" aria-label="Mobile search" class="flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/20 bg-white/8">
+      <label for="mobile-search" class="sr-only">Search site</label>
+      <svg class="w-4 h-4 text-white/55" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+      </svg>
+      <input id="mobile-search" name="q" type="search" placeholder="Search…" class="flex-1 bg-transparent text-white placeholder-white/45 text-sm outline-none" />
+    </form>
+  </div>
+</nav>
 
 <script>
   const btn      = document.getElementById('mobile-menu-btn');
