@@ -34,8 +34,15 @@ const hasEmail    = Boolean(person.email);
   description={`${displayName} — ${person.position} at the Nittany Lion Fund.`}
 >
 
+  <!-- ── Hero wrapper with background image ───────────────────── -->
+  <div class="relative overflow-hidden" style="background: var(--color-navy);">
+    <div class="absolute inset-0 bg-cover bg-no-repeat" aria-hidden="true"
+      style="background-image: url('/images/Nittany-Lion-Meet-Team-Base.jpg'); background-position: center center;"></div>
+    <div class="absolute inset-0" aria-hidden="true"
+      style="background: linear-gradient(160deg, rgba(0,10,30,0.72) 0%, rgba(0,20,55,0.82) 100%);"></div>
+
   <!-- ── Back nav ──────────────────────────────────────────────── -->
-  <div style="background: var(--color-navy); padding: 5.5rem 1.5rem 0;">
+  <div class="relative z-10" style="padding: 5.5rem 1.5rem 0;">
     <div class="max-w-5xl mx-auto">
       <a
         href={`/team#${person.backHash}`}
@@ -51,7 +58,7 @@ const hasEmail    = Boolean(person.email);
   </div>
 
   <!-- ── Profile hero band ─────────────────────────────────────── -->
-  <div style="background: var(--color-navy); padding: 2.5rem 1.5rem 4rem;">
+  <div class="relative z-10" style="padding: 2.5rem 1.5rem 4rem;">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center sm:items-end gap-6">
       <!-- Avatar -->
       <div
@@ -87,6 +94,7 @@ const hasEmail    = Boolean(person.email);
       </div>
     </div>
   </div>
+  </div><!-- end hero wrapper -->
 
   <!-- ── Profile body ───────────────────────────────────────────── -->
   <section class="py-16 bg-white">
