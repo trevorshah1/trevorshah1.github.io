@@ -194,6 +194,18 @@
    ============================================================ */
 .scroll-chevron { animation: bounce-y 2s ease-in-out infinite; }
 
+/* Team page responsive cards */
+.team-card {
+  flex: none;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .team-card { width: calc((100% - 1.5rem) / 2); }
+}
+@media (min-width: 1024px) {
+  .team-card { width: calc((100% - 4.5rem) / 4); }
+}
+
 .btn-primary {
   display: inline-flex;
   align-items: center;
