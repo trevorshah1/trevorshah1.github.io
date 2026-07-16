@@ -6,8 +6,12 @@ const YELLOW = '#F5C518';
 const { executive_board, leadership, fund_managers } = teamData;
 const sectors = [...new Set(fund_managers.map((m) => m.sector))].sort();
 
-// All view: every manager alphabetically by name
-const allManagersSorted = [...fund_managers].sort((a, b) => a.name.localeCompare(b.name));
+// All view: shuffled (random mix, baked in at build time)
+const allManagersShuffled = [...fund_managers];
+for (let i = allManagersShuffled.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [allManagersShuffled[i], allManagersShuffled[j]] = [allManagersShuffled[j], allManagersShuffled[i]];
+}
 
 // Sector view: within each sector, leads first then associates, both alphabetical
 const sectorGroups = sectors.map((sector) => ({
@@ -171,7 +175,7 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
 
       <!-- ALL view: flat alphabetical grid (shown by default) -->
       <div id="all-managers" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;">
-        {allManagersSorted.map((member) => (
+        {allManagersShuffled.map((member) => (
           <a
             href={`/team/${member.slug}`}
             class="team-card manager-card group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
@@ -183,7 +187,7 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
                 <img
                   src={member.photo}
                   alt={member.name}
-                  class="w-full h-full object-cover object-center"
+                  class="w-full h-full object-cover object-top"
                 />
               ) : (
                 <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
@@ -217,7 +221,7 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
                       <img
                         src={member.photo}
                         alt={member.name}
-                        class="w-full h-full object-cover object-center"
+                        class="w-full h-full object-cover object-top"
                       />
                     ) : (
                       <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
