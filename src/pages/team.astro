@@ -4,7 +4,7 @@ import teamData from '../data/team.json';
 
 const YELLOW = '#F5C518';
 const { executive_board, leadership, fund_managers } = teamData;
-const sectors = [...new Set(fund_managers.map((m) => m.sector))];
+const sectors = [...new Set(fund_managers.map((m) => m.sector))].sort();
 
 // Shared placeholder icon markup
 const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`;
