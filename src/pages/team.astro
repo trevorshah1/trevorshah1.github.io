@@ -6,6 +6,20 @@ const YELLOW = '#F5C518';
 const { executive_board, leadership, fund_managers } = teamData;
 const sectors = [...new Set(fund_managers.map((m) => m.sector))].sort();
 
+// Group by sector; within each sector: leads first, then associates, both alphabetical
+const sectorGroups = sectors.map((sector) => ({
+  sector,
+  members: fund_managers
+    .filter((m) => m.sector === sector)
+    .sort((a, b) => {
+      const aLead = a.position.toLowerCase().includes('lead');
+      const bLead = b.position.toLowerCase().includes('lead');
+      if (aLead && !bLead) return -1;
+      if (!aLead && bLead) return 1;
+      return a.name.localeCompare(b.name);
+    }),
+}));
+
 // Shared placeholder icon markup
 const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"/></svg>`;
 ---
@@ -152,39 +166,42 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
         ))}
       </div>
 
-      <!-- Manager cards: 4 per row, last row centered -->
-      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;" id="managers-grid">
-        {fund_managers.map((member) => (
-          <a
-            href={`/team/${member.slug}`}
-            class="team-card manager-card group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-            data-sector={member.sector}
-            style="box-shadow:0 1px 6px rgba(0,30,68,0.08);"
-          >
-            <!-- Headshot -->
-            <div style="aspect-ratio:1/1;background:#E4E8EE;overflow:hidden;">
-              {member.photo ? (
-                <img
-                  src={member.photo}
-                  alt={member.name}
-                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
-              ) : (
-                <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
-              )}
+      <!-- Manager cards grouped by sector -->
+      <div id="managers-grid">
+        {sectorGroups.map(({ sector, members }) => (
+          <div class="sector-group mb-10" data-sector={sector}>
+            <h3 class="font-serif font-bold text-xl mb-4" style="color:var(--color-navy);">{sector}</h3>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;">
+              {members.map((member) => (
+                <a
+                  href={`/team/${member.slug}`}
+                  class="team-card manager-card group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  data-sector={member.sector}
+                  style="box-shadow:0 1px 6px rgba(0,30,68,0.08);"
+                >
+                  <!-- Headshot -->
+                  <div style="aspect-ratio:1/1;background:#E4E8EE;overflow:hidden;">
+                    {member.photo ? (
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
+                    )}
+                  </div>
+                  <!-- Info below -->
+                  <div class="px-3 py-3">
+                    <p class="font-semibold leading-snug" style="color:var(--color-navy);font-size:0.875rem;">
+                      {member.name || '—'}
+                    </p>
+                    <p class="mt-0.5" style="color:var(--color-slate);font-size:0.75rem;">{member.position}</p>
+                  </div>
+                </a>
+              ))}
             </div>
-            <!-- Info below -->
-            <div class="px-3 py-3">
-              <p class="font-semibold leading-snug" style="color:var(--color-navy);font-size:0.875rem;">
-                {member.name || '—'}
-              </p>
-              <p class="mt-0.5" style="color:var(--color-slate);font-size:0.75rem;">{member.position}</p>
-              <span class="inline-block mt-1.5 px-2 py-0.5 rounded-full text-xs font-semibold"
-                style="background:rgba(0,30,68,0.07);color:var(--color-navy);">
-                {member.sector}
-              </span>
-            </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>
@@ -193,8 +210,8 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
 </Layout>
 
 <script>
-  const btns  = document.querySelectorAll<HTMLButtonElement>('.sector-btn');
-  const cards = document.querySelectorAll<HTMLElement>('.manager-card');
+  const btns   = document.querySelectorAll<HTMLButtonElement>('.sector-btn');
+  const groups = document.querySelectorAll<HTMLElement>('.sector-group');
 
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -205,8 +222,8 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
         b.style.color       = active ? '#fff' : 'var(--color-navy)';
         b.style.borderColor = active ? 'var(--color-navy)' : '#C4C9D4';
       });
-      cards.forEach((card) => {
-        card.style.display = (sector === 'All' || card.dataset.sector === sector) ? '' : 'none';
+      groups.forEach((group) => {
+        group.style.display = (sector === 'All' || group.dataset.sector === sector) ? '' : 'none';
       });
     });
   });
