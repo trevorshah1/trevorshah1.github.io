@@ -6,7 +6,10 @@ const YELLOW = '#F5C518';
 const { executive_board, leadership, fund_managers } = teamData;
 const sectors = [...new Set(fund_managers.map((m) => m.sector))].sort();
 
-// Group by sector; within each sector: leads first, then associates, both alphabetical
+// All view: every manager alphabetically by name
+const allManagersSorted = [...fund_managers].sort((a, b) => a.name.localeCompare(b.name));
+
+// Sector view: within each sector, leads first then associates, both alphabetical
 const sectorGroups = sectors.map((sector) => ({
   sector,
   members: fund_managers
@@ -92,7 +95,7 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
                 <img
                   src={member.photo}
                   alt={member.name}
-                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  class="w-full h-full object-cover object-top"
                 />
               ) : (
                 <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
@@ -133,7 +136,7 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
                 <img
                   src={member.photo}
                   alt={member.name}
-                  class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  class="w-full h-full object-cover object-top"
                 />
               ) : (
                 <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
@@ -166,8 +169,38 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
         ))}
       </div>
 
-      <!-- Manager cards grouped by sector -->
-      <div id="managers-grid">
+      <!-- ALL view: flat alphabetical grid (shown by default) -->
+      <div id="all-managers" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;">
+        {allManagersSorted.map((member) => (
+          <a
+            href={`/team/${member.slug}`}
+            class="team-card manager-card group block rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            data-sector={member.sector}
+            style="box-shadow:0 1px 6px rgba(0,30,68,0.08);"
+          >
+            <div style="aspect-ratio:1/1;background:#E4E8EE;overflow:hidden;">
+              {member.photo ? (
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  class="w-full h-full object-cover object-center"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
+              )}
+            </div>
+            <div class="px-3 py-3">
+              <p class="font-semibold leading-snug" style="color:var(--color-navy);font-size:0.875rem;">
+                {member.name || '—'}
+              </p>
+              <p class="mt-0.5" style="color:var(--color-slate);font-size:0.75rem;">{member.position}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- SECTOR view: grouped by sector, lead first (hidden by default) -->
+      <div id="sector-groups" style="display:none;">
         {sectorGroups.map(({ sector, members }) => (
           <div class="sector-group mb-10" data-sector={sector}>
             <h3 class="font-serif font-bold text-xl mb-4" style="color:var(--color-navy);">{sector}</h3>
@@ -179,19 +212,17 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
                   data-sector={member.sector}
                   style="box-shadow:0 1px 6px rgba(0,30,68,0.08);"
                 >
-                  <!-- Headshot -->
                   <div style="aspect-ratio:1/1;background:#E4E8EE;overflow:hidden;">
                     {member.photo ? (
                       <img
                         src={member.photo}
                         alt={member.name}
-                        class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                        class="w-full h-full object-cover object-center"
                       />
                     ) : (
                       <div class="w-full h-full flex items-center justify-center" set:html={personIcon} />
                     )}
                   </div>
-                  <!-- Info below -->
                   <div class="px-3 py-3">
                     <p class="font-semibold leading-snug" style="color:var(--color-navy);font-size:0.875rem;">
                       {member.name || '—'}
@@ -204,27 +235,40 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
           </div>
         ))}
       </div>
+
     </div>
   </section>
 
 </Layout>
 
 <script>
-  const btns   = document.querySelectorAll<HTMLButtonElement>('.sector-btn');
-  const groups = document.querySelectorAll<HTMLElement>('.sector-group');
+  const btns      = document.querySelectorAll<HTMLButtonElement>('.sector-btn');
+  const allView   = document.getElementById('all-managers')!;
+  const sectorView = document.getElementById('sector-groups')!;
+  const groups    = document.querySelectorAll<HTMLElement>('.sector-group');
 
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const sector = btn.dataset.sector!;
+
+      // Update pill styles
       btns.forEach((b) => {
         const active = b.dataset.sector === sector;
         b.style.background  = active ? 'var(--color-navy)' : 'transparent';
         b.style.color       = active ? '#fff' : 'var(--color-navy)';
         b.style.borderColor = active ? 'var(--color-navy)' : '#C4C9D4';
       });
-      groups.forEach((group) => {
-        group.style.display = (sector === 'All' || group.dataset.sector === sector) ? '' : 'none';
-      });
+
+      if (sector === 'All') {
+        allView.style.display   = '';
+        sectorView.style.display = 'none';
+      } else {
+        allView.style.display   = 'none';
+        sectorView.style.display = '';
+        groups.forEach((group) => {
+          group.style.display = group.dataset.sector === sector ? '' : 'none';
+        });
+      }
     });
   });
 </script>
