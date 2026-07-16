@@ -1,6 +1,6 @@
 {
   "executive_board": [
-    { "slug": "exec-president", "name": "", "position": "President",                "photo": "", "bio": "", "linkedin": "", "email": "" },
+    { "slug": "exec-president", "name": "Matthew Boyle", "position": "President", "photo": "", "bio": "Matthew Boyle is a junior Finance major in the Smeal College of Business from Ellicott City, MD. He currently serves as the President in the Nittany Lion Fund after previously serving as a Director of NLF Education. This summer, Matthew will be interning at Evercore in the Investment Banking Division. In his free time, Matthew enjoys golfing, cooking, and hanging out with friends and family. He says that the Nittany Lion Fund has helped him strengthen his analytical skills and ability to perform under pressure.", "linkedin": "https://www.linkedin.com/in/matthew-boylee/", "email": "matthew.boyle0523@gmail.com" },
     { "slug": "exec-vp",        "name": "", "position": "Vice President",            "photo": "", "bio": "", "linkedin": "", "email": "" },
     { "slug": "exec-cio",       "name": "", "position": "Chief Investment Officer",  "photo": "", "bio": "", "linkedin": "", "email": "" },
     { "slug": "exec-cfo",       "name": "", "position": "Chief Financial Officer",   "photo": "", "bio": "", "linkedin": "", "email": "" }
