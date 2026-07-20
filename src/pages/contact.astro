@@ -2,14 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 
 /*
-  FORM SETUP (one-time, 2 minutes):
-  1. Go to https://formspree.io and create a free account.
-  2. Create a new form — enter the email you want submissions sent to.
-  3. Copy the form ID (looks like "xabc1234").
-  4. Replace "YOUR_FORM_ID" on the next line with that ID.
-  Free plan: 50 submissions/month.
+  FORM SETUP (one-time, ~1 minute — no account needed):
+  1. Go to https://web3forms.com
+  2. Enter trevorshah2007@gmail.com and click "Create your Access Key"
+  3. Check your email and copy the access key
+  4. Replace "YOUR_ACCESS_KEY" below with that key
 */
-const FORMSPREE_ID = 'YOUR_FORM_ID';
+const WEB3FORMS_KEY = 'YOUR_ACCESS_KEY';
 ---
 
 <Layout
@@ -53,11 +52,14 @@ const FORMSPREE_ID = 'YOUR_FORM_ID';
 
       <form
         id="contact-form"
-        action={`https://formspree.io/f/${FORMSPREE_ID}`}
+        action="https://api.web3forms.com/submit"
         method="POST"
         class="reveal space-y-5"
         novalidate
       >
+        <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+        <input type="hidden" name="subject" value="New Contact Form Submission — Nittany Lion Fund" />
+        <input type="hidden" name="from_name" value="Nittany Lion Fund Website" />
         <!-- Name -->
         <div>
           <label for="name" class="field-label">
