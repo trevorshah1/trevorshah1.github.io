@@ -49,43 +49,13 @@
           class="relative rounded-2xl overflow-hidden shadow-2xl aspect-video"
           style="background:var(--color-navy);"
         >
-          <!--
-            Replace this <video> with an <iframe> if using YouTube/Vimeo.
-            YouTube example:
-              <iframe
-                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-                title="About the Nittany Lion Fund"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                class="absolute inset-0 w-full h-full border-0"
-              ></iframe>
-          -->
-          <video
-            class="w-full h-full object-cover"
-            controls
-            preload="none"
-            poster="/images/who-we-are-poster.jpg"
-            aria-label="About the Nittany Lion Fund"
-          >
-            <source src="/videos/who-we-are.mp4" type="video/mp4" />
-            <p class="p-6 text-white/70 text-sm">
-              Your browser doesn't support HTML video.
-              <a href="/videos/who-we-are.mp4" class="underline text-white">Download the video.</a>
-            </p>
-          </video>
-
-          <!-- Placeholder shown while video file hasn't been added yet -->
-          <div
-            id="video-placeholder"
-            class="absolute inset-0 flex flex-col items-center justify-center text-white/40 text-sm pointer-events-none"
-            aria-hidden="true"
-          >
-            <svg class="w-16 h-16 mb-3 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span>Video coming soon</span>
-          </div>
+          <iframe
+            src="https://www.youtube.com/embed/mEz_2Diypp0"
+            title="About the Nittany Lion Fund"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="absolute inset-0 w-full h-full border-0"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -93,13 +63,3 @@
   </div>
 </section>
 
-<script>
-  // Hide placeholder once video loads its metadata
-  const video = document.querySelector('#who-we-are video') as HTMLVideoElement | null;
-  const placeholder = document.getElementById('video-placeholder');
-  if (video && placeholder) {
-    video.addEventListener('loadedmetadata', () => {
-      placeholder.style.display = 'none';
-    });
-  }
-</script>
