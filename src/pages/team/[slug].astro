@@ -8,19 +8,27 @@ export function getStaticPaths() {
     ...teamData.leadership.map((p)       => ({ ...p, group: 'Leadership',       backHash: 'leadership' })),
     ...teamData.fund_managers.map((p)    => ({ ...p, group: 'Fund Managers',    backHash: 'managers' })),
   ];
-  return all.map((person) => ({
-    params: { slug: person.slug },
-    props:  { person },
-  }));
+  return all.map((person) => {
+    let otherRole: { position: string; sector?: string } | null = null;
+    if (person.group === 'Leadership') {
+      const fm = teamData.fund_managers.find(m => m.name === person.name);
+      if (fm) otherRole = { position: fm.position, sector: fm.sector };
+    } else if (person.group === 'Fund Managers') {
+      const ls = teamData.leadership.find(m => m.name === person.name);
+      if (ls) otherRole = { position: ls.position };
+    }
+    return { params: { slug: person.slug }, props: { person, otherRole } };
+  });
 }
 
-const { person } = Astro.props as {
+const { person, otherRole } = Astro.props as {
   person: {
     slug: string; name: string; position: string; photo: string;
     bio: string; linkedin: string; email: string;
     group: string; backHash: string;
     sector?: string;
   };
+  otherRole: { position: string; sector?: string } | null;
 };
 
 const displayName = person.name || 'TBD';
@@ -91,6 +99,11 @@ const hasEmail    = Boolean(person.email);
         <p class="mt-1 text-base font-medium" style="color: rgba(255,255,255,0.60);">
           {person.position}
         </p>
+        {otherRole && (
+          <p class="mt-0.5 text-sm font-medium" style="color: rgba(255,255,255,0.42);">
+            {otherRole.position}{otherRole.sector ? ` · ${otherRole.sector}` : ''}
+          </p>
+        )}
       </div>
     </div>
   </div>
