@@ -6,8 +6,8 @@ const YELLOW = '#F5C518';
 const { executive_board, leadership, fund_managers } = teamData;
 const sectors = [...new Set(fund_managers.map((m) => m.sector))].sort();
 
-// All view: stable alphabetical order
-const allManagersShuffled = [...fund_managers].sort((a, b) => a.name.localeCompare(b.name));
+// All view: fixed order baked into team.json
+const allManagersShuffled = fund_managers;
 
 // Sector view: within each sector, leads first then associates, both alphabetical
 const sectorGroups = sectors.map((sector) => ({
