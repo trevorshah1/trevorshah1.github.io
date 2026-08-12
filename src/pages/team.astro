@@ -6,12 +6,8 @@ const YELLOW = '#F5C518';
 const { executive_board, leadership, fund_managers } = teamData;
 const sectors = [...new Set(fund_managers.map((m) => m.sector))].sort();
 
-// All view: shuffled (random mix, baked in at build time)
-const allManagersShuffled = [...fund_managers];
-for (let i = allManagersShuffled.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1));
-  [allManagersShuffled[i], allManagersShuffled[j]] = [allManagersShuffled[j], allManagersShuffled[i]];
-}
+// All view: stable alphabetical order
+const allManagersShuffled = [...fund_managers].sort((a, b) => a.name.localeCompare(b.name));
 
 // Sector view: within each sector, leads first then associates, both alphabetical
 const sectorGroups = sectors.map((sector) => ({
