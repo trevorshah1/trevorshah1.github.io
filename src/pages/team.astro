@@ -260,13 +260,15 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
       });
 
       if (sector === 'All') {
-        allView.style.display   = '';
+        allView.style.display    = 'flex';
         sectorView.style.display = 'none';
       } else {
-        allView.style.display   = 'none';
-        sectorView.style.display = '';
+        allView.style.display    = 'none';
+        sectorView.style.display = 'block';
         groups.forEach((group) => {
+          const groupInner = group.querySelector<HTMLElement>('div[style*="flex-wrap"]');
           group.style.display = group.dataset.sector === sector ? '' : 'none';
+          if (groupInner) groupInner.style.display = 'flex';
         });
       }
     });
