@@ -1,14 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-/*
-  FORM SETUP (one-time, ~1 minute — no account needed):
-  1. Go to https://web3forms.com
-  2. Enter trevorshah2007@gmail.com and click "Create your Access Key"
-  3. Check your email and copy the access key
-  4. Replace "YOUR_ACCESS_KEY" below with that key
-*/
-const WEB3FORMS_KEY = 'cde6fd0b-e5d6-4c60-8ccd-538d9ca4a135';
 ---
 
 <Layout
@@ -36,88 +27,54 @@ const WEB3FORMS_KEY = 'cde6fd0b-e5d6-4c60-8ccd-538d9ca4a135';
     </div>
   </section>
 
-  <!-- ── Form ──────────────────────────────────────────────────── -->
+  <!-- ── GroupMe Invite ───────────────────────────────────────── -->
   <section class="py-20 sm:py-28 bg-white">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-      <div class="text-center mb-10 reveal">
-        <p class="section-label mb-3">Send a Message</p>
+      <div class="mb-10 reveal">
+        <p class="section-label mb-3">Join the Conversation</p>
         <h2 class="font-serif font-bold text-3xl sm:text-4xl" style="color:var(--color-navy);">
-          We'd love to hear from you
+          Connect With Us on GroupMe
         </h2>
         <p class="mt-3 text-base" style="color:var(--color-slate);">
-          We typically respond within 3–5 business days.
+          Join our GroupMe to stay up to date with announcements, events, and more.
         </p>
       </div>
 
-      <form
-        id="contact-form"
-        action="https://api.web3forms.com/submit"
-        method="POST"
-        class="reveal space-y-5"
-        novalidate
-      >
-        <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-        <input type="hidden" name="subject" value="New Contact Form Submission — Nittany Lion Fund" />
-        <input type="hidden" name="from_name" value="Nittany Lion Fund Website" />
-        <!-- Name -->
-        <div>
-          <label for="name" class="field-label">
-            Full Name <span style="color:#e53e3e;" aria-hidden="true">*</span>
-          </label>
-          <input id="name" name="name" type="text" placeholder="Jane Smith" required class="field-input" />
-        </div>
-
-        <!-- Email -->
-        <div>
-          <label for="email" class="field-label">
-            Email Address <span style="color:#e53e3e;" aria-hidden="true">*</span>
-          </label>
-          <input id="email" name="email" type="email" placeholder="jane@example.com" required class="field-input" />
-        </div>
-
-        <!-- Who are you -->
-        <div>
-          <label for="who" class="field-label">
-            Who are you? <span style="color:#e53e3e;" aria-hidden="true">*</span>
-          </label>
-          <select id="who" name="who_are_you" required class="field-input field-select">
-            <option value="">Select one…</option>
-            <option>Current Penn State Student</option>
-            <option>Prospective Penn State Student</option>
-            <option>High School Student</option>
-            <option>Recruiter</option>
-            <option>Investor / Alumni</option>
-            <option>Faculty</option>
-            <option>Other</option>
-          </select>
-        </div>
-
-        <!-- Message -->
-        <div>
-          <label for="message" class="field-label">
-            Message <span style="color:#e53e3e;" aria-hidden="true">*</span>
-          </label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help…"
-            required class="field-input" style="resize:vertical;min-height:130px;"></textarea>
-        </div>
-
-        <button type="submit" id="submit-btn" class="btn-primary w-full justify-center" style="font-size:1rem;padding:0.875rem 2rem;">
-          Send Message
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </button>
-
-        <div id="form-success" style="display:none;" class="rounded-xl px-5 py-4 text-sm font-medium"
-          style="background:#f0fdf4;color:#166534;border:1px solid #bbf7d0;">
-          ✓ Message sent! We'll get back to you soon.
-        </div>
-        <div id="form-error" style="display:none;" class="rounded-xl px-5 py-4 text-sm font-medium"
-          style="background:#fef2f2;color:#991b1b;border:1px solid #fecaca;">
-          Something went wrong — please try again or email us directly.
-        </div>
-      </form>
+      <div class="reveal">
+        <a
+          href="https://groupme.com/join_group/112607891/Fqh33h20"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-block w-full rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5"
+          style="box-shadow:0 4px 24px rgba(0,30,68,0.12);"
+        >
+          <!-- Card header -->
+          <div class="flex items-center gap-4 px-6 py-5" style="background:#00AFF0;">
+            <div class="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl"
+              style="background:rgba(255,255,255,0.20);">
+              <!-- GroupMe speech-bubble icon -->
+              <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.145 2 11.243c0 3.022 1.536 5.71 3.938 7.431V22l3.361-1.85c.895.248 1.843.381 2.824.381 5.523 0 10-4.145 10-9.243C22 6.145 17.523 2 12 2zm1.008 12.454l-2.548-2.714-4.976 2.714 5.476-5.813 2.61 2.713 4.914-2.713-5.476 5.813z"/>
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 text-left">
+              <p class="font-bold text-white text-base leading-tight">Nittany Lion Fund</p>
+              <p class="text-sm mt-0.5" style="color:rgba(255,255,255,0.80);">GroupMe Community</p>
+            </div>
+            <svg class="w-5 h-5 flex-shrink-0 text-white opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </div>
+          <!-- Card body -->
+          <div class="px-6 py-5 bg-white text-left">
+            <p class="text-sm leading-relaxed" style="color:var(--color-charcoal);">
+              Get real-time updates on recruiting events, info sessions, application deadlines, and fund announcements — all in one place.
+            </p>
+            <p class="mt-3 text-sm font-bold" style="color:#00AFF0;">Join the GroupMe →</p>
+          </div>
+        </a>
+      </div>
 
     </div>
   </section>
@@ -232,75 +189,3 @@ const WEB3FORMS_KEY = 'cde6fd0b-e5d6-4c60-8ccd-538d9ca4a135';
 
 </Layout>
 
-<style>
-  .field-label {
-    display: block;
-    font-size: 0.8125rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--color-navy);
-    margin-bottom: 0.45rem;
-  }
-  .field-input {
-    display: block;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1.5px solid #D0D5DE;
-    border-radius: 0.625rem;
-    font-size: 0.9375rem;
-    color: var(--color-charcoal);
-    background: #fff;
-    font-family: var(--font-sans);
-    outline: none;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  .field-input:focus {
-    border-color: var(--color-pugh);
-    box-shadow: 0 0 0 3px rgba(77,136,190,0.18);
-  }
-  .field-input::placeholder { color: #9AA5B4; }
-  .field-select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239AA5B4'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 0.875rem center;
-    background-size: 1rem;
-    padding-right: 2.75rem;
-    cursor: pointer;
-  }
-</style>
-
-<script>
-  const form    = document.getElementById('contact-form') as HTMLFormElement;
-  const btn     = document.getElementById('submit-btn') as HTMLButtonElement;
-  const success = document.getElementById('form-success') as HTMLElement;
-  const error   = document.getElementById('form-error') as HTMLElement;
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    btn.disabled    = true;
-    btn.textContent = 'Sending…';
-
-    try {
-      const res = await fetch(form.action, {
-        method:  'POST',
-        body:    new FormData(form),
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
-        form.reset();
-        success.style.display = 'block';
-        error.style.display   = 'none';
-        btn.textContent       = '✓ Sent!';
-      } else {
-        throw new Error('failed');
-      }
-    } catch {
-      error.style.display   = 'block';
-      success.style.display = 'none';
-      btn.disabled          = false;
-      btn.textContent       = 'Send Message';
-    }
-  });
-</script>
