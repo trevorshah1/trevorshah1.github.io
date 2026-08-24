@@ -39,31 +39,13 @@
   ],
   "leadership": [
     {
-      "slug": "ls-1",
-      "name": "Joseph Lee",
-      "position": "Fund Administrator",
-      "photo": "/images/Headshots/Lee_Joseph.jpg",
-      "bio": "Joseph Lee is a sophomore Finance major in the Smeal College of Business from State College, PA. He currently serves as the Head Trader and a Lead Analyst of Financials in the Nittany Lion Fund after previously serving as a Director of Portfolio Analytics and an Associate Analyst of Financials. During this past summer, Joseph interned with the Nittany Lion Fund in the Healthcare and Materials Sector. In his free time, Joseph enjoys hiking, listening to music, and spending time with family. He says that the Nittany Lion Fund has helped him strengthen his analytical skills while reinforcing the importance of personal accountability.",
-      "linkedin": "https://linkedin.com/in/josephjlee2",
-      "email": "josephjlee6@gmail.com"
-    },
-    {
-      "slug": "ls-2",
-      "name": "Luke Fuller",
-      "position": "Fund Administrator",
-      "photo": "/images/Headshots/Luke-Fuller.jpg",
-      "bio": "Luke Fuller is a sophomore Finance major in the Smeal College of Business from State College, PA. He currently serves as a Lead of the Financials Sector and the Head of Portfolio Analytics in the Nittany Lion Fund after previously serving as the Associate Analyst of the Industrials Sector and a Director of Portfolio Analytics. During this past summer, Luke interned with the Nittany Lion Fund in the Industrials Sector and will be interning at Vicus Capital as an Investment Management and Research Analyst this summer. In his free time, Luke enjoys working out, golfing with friends, and watching the Pittsburgh Steelers. He says that the Nittany Lion Fund has helped him develop skills such as the ability to work under pressure and attention to detail.",
-      "linkedin": "https://www.linkedin.com/in/lfullerpsu2028/",
-      "email": "lukefuller880@gmail.com"
-    },
-    {
-      "slug": "ls-3",
-      "name": "Gabriel (Gabe) Harvey",
+      "slug": "ls-micah-cagley",
+      "name": "Micah Cagley",
       "position": "Head Trader",
-      "photo": "/images/Headshots/Gabriel-Harvey_750x750_crop.jpg",
-      "bio": "Gabriel (Gabe) Harvey is a freshman Finance major in the Smeal College of Business from Moorestown, NJ. He currently serves as the Associate Analyst of the Materials Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in equity research. In his free time, Gabe enjoys watching the Atlanta Falcons, playing pickleball, and spending time with family and friends. He says that the Nittany Lion Fund has helped him develop strong time management and professional skills.",
-      "linkedin": "https://www.linkedin.com/in/gabeharvey",
-      "email": "harveygabe051106@gmail.com"
+      "photo": "/images/Headshots/Cagley_Micah.jpg",
+      "bio": "Micah Cagley is a junior Finance major in the Smeal College of Business from Pittsburgh, PA. He currently serves as the Lead Analyst of Real Estate in the Nittany Lion Fund after previously serving as the Associate Analyst of Real Estate. During this past summer, Micah interned with the Nittany Lion Fund in the Real Estate Sector, and after spending two semesters in the Nittany Lion Fund, he has developed an interest in investment banking and private equity. In his free time, Micah enjoys traveling, hiking, and college football. He says that the Nittany Lion Fund has taught him strong attention to detail and time management skills.",
+      "linkedin": "https://www.linkedin.com/in/micah-cagley-348278314/",
+      "email": "micahcagley@gmail.com"
     },
     {
       "slug": "ls-4",
@@ -91,6 +73,132 @@
       "bio": "Colin Costello is a freshman Finance major in the Smeal College of Business from Easton, MA. He currently serves as the Associate Analyst of the Consumer Discretionary Sector and a Director of Portfolio Analytics in the Nittany Lion Fund. After spending two semesters in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Colin enjoys lifting weights, playing sports, and riding his bike. He says that the Nittany Lion Fund has helped him develop his communication skills and a strong sense of accountability.",
       "linkedin": "https://www.linkedin.com/in/colinmcostello/",
       "email": "colinmcostello@gmail.com"
+    },
+    {
+      "slug": "ls-ellie-kellick",
+      "name": "Ellie Kellick",
+      "position": "Director of PSIA & Head of Outreach",
+      "photo": "/images/Headshots/Kellick_Ellie.jpg",
+      "bio": "Ellie Kellick is a junior Finance major in the Smeal College of Business from Erie, PA. She currently serves as a Director of PSIA and Director of Outreach in the Nittany Lion Fund after previously serving as a Lead Analyst of Communication Services. Ellie will be interning at JPB Partners as a Private Equity Analyst this summer. In her free time, Ellie enjoys fitness, traveling, and trying new coffee shops. She says that the Nittany Lion Fund has taught her the importance of personal accountability.",
+      "linkedin": "https://www.linkedin.com/in/ellie-kellick-200b34326",
+      "email": "elliekellick9@gmail.com"
+    },
+    {
+      "slug": "ls-2",
+      "name": "Luke Fuller",
+      "position": "Director of PSIA",
+      "photo": "/images/Headshots/Luke-Fuller.jpg",
+      "bio": "Luke Fuller is a sophomore Finance major in the Smeal College of Business from State College, PA. He currently serves as a Lead of the Financials Sector and the Head of Portfolio Analytics in the Nittany Lion Fund after previously serving as the Associate Analyst of the Industrials Sector and a Director of Portfolio Analytics. During this past summer, Luke interned with the Nittany Lion Fund in the Industrials Sector and will be interning at Vicus Capital as an Investment Management and Research Analyst this summer. In his free time, Luke enjoys working out, golfing with friends, and watching the Pittsburgh Steelers. He says that the Nittany Lion Fund has helped him develop skills such as the ability to work under pressure and attention to detail.",
+      "linkedin": "https://www.linkedin.com/in/lfullerpsu2028/",
+      "email": "lukefuller880@gmail.com"
+    },
+    {
+      "slug": "ls-dan-saveliev",
+      "name": "Dan Saveliev",
+      "position": "Director of Pitch Quality",
+      "photo": "/images/Headshots/Saveliev_Daniel.jpg",
+      "bio": "Dan Saveliev is a junior Finance and Accounting major in the Smeal College of Business from Media, PA. He currently serves as a Lead Analyst of Healthcare in the Nittany Lion Fund after previously serving as the Lead Analyst of Industrials. During this past summer, Dan interned with the Nittany Lion Fund in Healthcare, and after spending one semester in the Nittany Lion Fund, he has developed an interest in investment banking, private equity, and asset management. In his free time, Dan enjoys skiing, traveling, and backpacking. He says that the Nittany Lion Fund has helped him develop his critical thinking and time management skills.",
+      "linkedin": "https://www.linkedin.com/in/daniel-saveliev/",
+      "email": "dansaveliev7@gmail.com"
+    },
+    {
+      "slug": "ls-1",
+      "name": "Joseph Lee",
+      "position": "Director of Pitch Quality",
+      "photo": "/images/Headshots/Lee_Joseph.jpg",
+      "bio": "Joseph Lee is a sophomore Finance major in the Smeal College of Business from State College, PA. He currently serves as the Head Trader and a Lead Analyst of Financials in the Nittany Lion Fund after previously serving as a Director of Portfolio Analytics and an Associate Analyst of Financials. During this past summer, Joseph interned with the Nittany Lion Fund in the Healthcare and Materials Sector. In his free time, Joseph enjoys hiking, listening to music, and spending time with family. He says that the Nittany Lion Fund has helped him strengthen his analytical skills while reinforcing the importance of personal accountability.",
+      "linkedin": "https://linkedin.com/in/josephjlee2",
+      "email": "josephjlee6@gmail.com"
+    },
+    {
+      "slug": "ls-dylan-schneider",
+      "name": "Dylan Schneider",
+      "position": "Director of NLF Education",
+      "photo": "/images/Headshots/Dylan-Schneider.jpg",
+      "bio": "Dylan Schneider is a junior finance and accounting major in the Smeal College of Business from Westchester, NY. He currently serves as a Lead Analyst of the Information Technology Sector in the Nittany Lion Fund after previously serving as the Associate Analyst of the Information Technology Sector. During this past summer, Dylan interned with the Nittany Lion Fund in the IT Sector and will be interning at Oppenheimer & Co. Inc. in the Online Travel & Sports Betting Equity Research Division this summer. In his free time, Dylan enjoys wrestling, learning magic tricks, and weightlifting. He says that the Nittany Lion Fund has fostered an environment in which he can sharpen his critical thinking while being motivated by like-minded individuals.",
+      "linkedin": "http://www.linkedin.com/in/dylan-schneider-48a0b6260",
+      "email": "dylschneid@gmail.com"
+    },
+    {
+      "slug": "ls-nic-jesso",
+      "name": "Nicholaus (Nic) Jesso",
+      "position": "Director of NLF Education",
+      "photo": "/images/Headshots/Jesso_Nicholaus.jpg",
+      "bio": "Nicholaus (Nic) Jesso is a junior Finance and Accounting major in the Smeal College of Business from Pittsburgh, PA. He currently serves as a Lead Analyst of the Communication Services Sector in the Nittany Lion Fund after previously serving as the Lead Analyst of the Utilities Sector and a Director of Weekly Reports. During this past summer, Nic interned with the Nittany Lion Fund in the Utilities Sector and will be interning at D. Boral Capital in the Investment Banking Division this summer. In his free time, Nic enjoys skiing, golfing, and rock climbing. He says that the Nittany Lion Fund has helped him develop a strong attention to detail and time management skills.",
+      "linkedin": "https://www.linkedin.com/in/nicholausjesso/",
+      "email": "njesso10@gmail.com"
+    },
+    {
+      "slug": "ls-reece-emerson",
+      "name": "Reece Emerson",
+      "position": "Director of Recruitment",
+      "photo": "/images/Headshots/Emerson_Reece.jpg",
+      "bio": "Reece Emerson is a junior Finance major in the Smeal College of Business from Levittown, PA. He currently serves as the Lead Analyst of Consumer Discretionary in the Nittany Lion Fund after previously serving as the Associate Analyst of Consumer Discretionary. During this past summer, Reece interned with the Nittany Lion Fund in the Consumer Discretionary Sector and will be interning at Santander in the Investment Banking Division this summer. In his free time, Reece enjoys watching Chelsea FC and spending time with his friends and family. He says that the Nittany Lion Fund has helped him develop the ability to work efficiently and has helped him understand the importance of producing high-quality work.",
+      "linkedin": "https://www.linkedin.com/in/reece-emerson-29471929b",
+      "email": "reeceemerson24@gmail.com"
+    },
+    {
+      "slug": "ls-adam-shaheen",
+      "name": "Adam Shaheen",
+      "position": "Director of Recruitment",
+      "photo": "/images/Headshots/Shaheen_Adam.jpg",
+      "bio": "Adam Shaheen is a junior Finance major in the Smeal College of Business from Cairo, Egypt. He currently serves as a Director of PSIA in the Nittany Lion Fund after previously serving as a Lead Analyst of the Information Technology Sector and a Director of Monthly Reports. During this past summer, Adam interned with the Nittany Lion Fund in the Information Technology Sector and will be interning at JPB Partners in the Private Equity Division this summer. In his free time, Adam enjoys golfing, watching the Philadelphia Eagles, and attending concerts. He says that the Nittany Lion Fund has helped him strengthen his time management and analytical skills while being able to perform under pressure.",
+      "linkedin": "https://www.linkedin.com/in/adam-shaheen-970813292",
+      "email": "ashaheen2024@gmail.com"
+    },
+    {
+      "slug": "ls-nicholas-zakrzewski",
+      "name": "Nicholas Zakrzewski",
+      "position": "Director of Compliance",
+      "photo": "/images/Headshots/Nicholas-Zakrzewski.jpg",
+      "bio": "Nicholas Zakrzewski is a freshman Finance major in the Smeal College of Business from Warrington, PA. He currently serves as the Associate Analyst of the Healthcare Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking and private equity. In his free time, Nicholas enjoys playing basketball, watching movies, and spending time with friends. He says that the Nittany Lion Fund has helped him develop strong attention to detail and time management skills.",
+      "linkedin": "https://www.linkedin.com/in/nicholas-zakrzewski/",
+      "email": "nickzak9@gmail.com"
+    },
+    {
+      "slug": "ls-adyaan-ahmed",
+      "name": "Adyaan Ahmed",
+      "position": "Head of Philanthropy",
+      "photo": "/images/Headshots/Ahmed_Adyaan.jpg",
+      "bio": "Adyaan is a junior Finance major in the Smeal College of Business from Plano, TX. He currently serves as the Lead Fund Manager and the Director of Philanthropy in the Nittany Lion Fund after previously serving as the analyst of the Consumer Discretionary Sector. During this past summer, Adyaan interned with the Nittany Lion Fund in the Healthcare & Industrials Sectors, and after spending one semester in the Nittany Lion Fund, he has developed an interest in investment banking. In his free time, Adyaan enjoys running, building personal computers, watching the Buffalo Bills, and spending time with friends. He says that the Nittany Lion Fund has helped him gain a strong work ethic, sharp attention to detail, and increased confidence.",
+      "linkedin": "https://www.linkedin.com/in/adyaanahmed/",
+      "email": "Adyaan.ahm@gmai.com"
+    },
+    {
+      "slug": "ls-13",
+      "name": "Ishmael (Zack) Limkakeng",
+      "position": "Director of Philanthropy",
+      "photo": "/images/Headshots/Ishmael-Zack-Limkakeng_750x750_crop.jpg",
+      "bio": "Ishmael (Zack) Limkakeng is a freshman Finance major in the Smeal College of Business from Pleasanton, CA. He currently serves as the Associate Analyst of Utilities in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Zack enjoys playing basketball, skiing, and traveling. He says that the Nittany Lion Fund has helped him develop strong attention to detail and effective time management skills.",
+      "linkedin": "https://www.linkedin.com/in/zack-limkakeng-126a10393/",
+      "email": "Zlimkakeng@gmail.com"
+    },
+    {
+      "slug": "ls-joey-donofrio",
+      "name": "Joseph (Joey) D'Onofrio",
+      "position": "Director of Philanthropy",
+      "photo": "/images/Headshots/Joseph-DOnofrio.jpg",
+      "bio": "Joseph (Joey) D'Onofrio is a freshman Finance major in the Smeal College of Business from Pleasanton, CA. He currently serves as the Associate Analyst of the Communication Services Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking and private equity. In his free time, Joey enjoys poker, San Francisco Bay Area sports, and golf. He says that the Nittany Lion Fund has helped him develop effective time management skills and a strong sense of personal accountability.",
+      "linkedin": "https://www.linkedin.com/in/joseph-d%E2%80%99onofrio-22627537a",
+      "email": "jdonofrio707@gmail.com"
+    },
+    {
+      "slug": "ls-14",
+      "name": "Mary Winand",
+      "position": "Director of Outreach",
+      "photo": "/images/Headshots/Mary-Winand_750x750_crop.jpg",
+      "bio": "Mary Winand is a freshman Math major in the Eberly College of Science from Lancaster, PA. She currently serves as the Associate Analyst of the Consumer Staples Sector and a Director of Outreach in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, she has developed an interest in quantitative finance and investment banking. In her free time, Mary enjoys running, board games, and watching Survivor. She says that the Nittany Lion Fund has taught her that there is always more you can do to improve yourself and your work.",
+      "linkedin": "https://www.linkedin.com/in/mary-winand",
+      "email": "mwinand12@gmail.com"
+    },
+    {
+      "slug": "ls-15",
+      "name": "Paige Lalla",
+      "position": "Director of Outreach",
+      "photo": "/images/Headshots/Paige Lalla.jpeg",
+      "bio": "Paige Lalla is a freshman Finance major in the Smeal College of Business from Baltimore, MD. She currently serves as the Associate Analyst of the Information Technology Sector and a Director of Outreach in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, she has developed an interest in investment banking. In her free time, Paige enjoys baking, swimming, and playing board games. She says that the Nittany Lion Fund has helped her to learn how to better manage her time.",
+      "linkedin": "https://www.linkedin.com/in/paige-lalla-2853022bb/",
+      "email": "pslalla227@gmail.com"
     },
     {
       "slug": "ls-7",
@@ -145,33 +253,6 @@
       "bio": "Thomas (Tommy) Flanagan is a freshman Finance major in the Smeal College of Business from Weston, MA. He currently serves as the Associate Fund Manager of the Energy Sector and a Director of Quarterly Reports in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Tommy enjoys lacrosse, Formula 1, and hockey. He says that the Nittany Lion Fund has taught him how to manage his time efficiently and hold himself accountable to deadlines, helping him complete deliverables effectively and on time.",
       "linkedin": "https://www.linkedin.com/in/tommy-flanagan-306b24370/",
       "email": "flanagantommy@gmail.com"
-    },
-    {
-      "slug": "ls-13",
-      "name": "Ishmael (Zack) Limkakeng",
-      "position": "Director of Compliance",
-      "photo": "/images/Headshots/Ishmael-Zack-Limkakeng_750x750_crop.jpg",
-      "bio": "Ishmael (Zack) Limkakeng is a freshman Finance major in the Smeal College of Business from Pleasanton, CA. He currently serves as the Associate Analyst of Utilities in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Zack enjoys playing basketball, skiing, and traveling. He says that the Nittany Lion Fund has helped him develop strong attention to detail and effective time management skills.",
-      "linkedin": "https://www.linkedin.com/in/zack-limkakeng-126a10393/",
-      "email": "Zlimkakeng@gmail.com"
-    },
-    {
-      "slug": "ls-14",
-      "name": "Mary Winand",
-      "position": "Director of Outreach",
-      "photo": "/images/Headshots/Mary-Winand_750x750_crop.jpg",
-      "bio": "Mary Winand is a freshman Math major in the Eberly College of Science from Lancaster, PA. She currently serves as the Associate Analyst of the Consumer Staples Sector and a Director of Outreach in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, she has developed an interest in quantitative finance and investment banking. In her free time, Mary enjoys running, board games, and watching Survivor. She says that the Nittany Lion Fund has taught her that there is always more you can do to improve yourself and your work.",
-      "linkedin": "https://www.linkedin.com/in/mary-winand",
-      "email": "mwinand12@gmail.com"
-    },
-    {
-      "slug": "ls-15",
-      "name": "Paige Lalla",
-      "position": "Director of Outreach",
-      "photo": "/images/Headshots/Paige Lalla.jpeg",
-      "bio": "Paige Lalla is a freshman Finance major in the Smeal College of Business from Baltimore, MD. She currently serves as the Associate Analyst of the Information Technology Sector and a Director of Outreach in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, she has developed an interest in investment banking. In her free time, Paige enjoys baking, swimming, and playing board games. She says that the Nittany Lion Fund has helped her to learn how to better manage her time.",
-      "linkedin": "https://www.linkedin.com/in/paige-lalla-2853022bb/",
-      "email": "pslalla227@gmail.com"
     }
   ],
   "fund_managers": [
@@ -228,7 +309,7 @@
     {
       "slug": "fm-tech-2",
       "name": "Neev Dani",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Information Technology",
       "photo": "/images/Headshots/Neev Dani.jpeg",
       "bio": "Neev Dani is a freshman Finance major in the Smeal College of Business from Virginia Beach, VA. He currently serves as an Associate Analyst of the Information Technology Sector and a Director of Monthly Reports in the Nittany Lion Fund. After spending two semesters in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Neev enjoys golfing, traveling, and watching sports. He says that the Nittany Lion Fund has helped him develop a strong attention to detail as well as communication skills.",
@@ -238,7 +319,7 @@
     {
       "slug": "fm-con-4",
       "name": "Trevor Shah",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Consumer Staples",
       "photo": "/images/Headshots/Trevor Shah.jpg",
       "bio": "Trevor Shah is a freshman Finance major in the Smeal College of Business from Avondale, PA. He currently serves as the Associate Analyst of the Consumer Staples Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Trevor enjoys golf, travel, and spending time with family and friends. He says that the Nittany Lion Fund has helped him improve his public speaking and instill higher levels of accountability.",
@@ -248,7 +329,7 @@
     {
       "slug": "fm-ind-1",
       "name": "Lucas Burton",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Real Estate",
       "photo": "/images/Headshots/Lucas Burton.jpeg",
       "bio": "Lucas Burton is a freshman Accounting and Finance major in the Smeal College of Business from Cary, IL. He currently serves as the Associate Analyst of the Real Estate Sector in the Nittany Lion Fund. After spending two semesters in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Lucas enjoys playing pickleball, watching the Seattle Seahawks, and playing board games. He says that the Nittany Lion Fund has helped him learn the fundamentals of investment banking and how to effectively network.",
@@ -268,7 +349,7 @@
     {
       "slug": "fm-tech-3",
       "name": "Paige Lalla",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Information Technology",
       "photo": "/images/Headshots/Paige Lalla.jpeg",
       "bio": "Paige Lalla is a freshman Finance major in the Smeal College of Business from Baltimore, MD. She currently serves as the Associate Analyst of the Information Technology Sector and a Director of Outreach in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, she has developed an interest in investment banking. In her free time, Paige enjoys baking, swimming, and playing board games. She says that the Nittany Lion Fund has helped her to learn how to better manage her time.",
@@ -278,7 +359,7 @@
     {
       "slug": "fm-fin-2",
       "name": "Sofia Acevedo",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Communication Services",
       "photo": "/images/Headshots/Sofia-Acevedo.jpeg",
       "bio": "Sofia Ospina Acevedo is a freshman Finance and Philosophy major in the Smeal College of Business and College of Liberal Arts from Erie, PA. She currently serves as the Associate Analyst of the Communication Services Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, she has developed an interest in investment banking and private equity. In her free time, Sofia enjoys cooking, interior design, and reading philosophy. She says that the Nittany Lion Fund has helped her strengthen her teamwork skills and develop an efficient work ethic.",
@@ -288,7 +369,7 @@
     {
       "slug": "fm-health-1",
       "name": "Ruhaan Vaidya",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Healthcare",
       "photo": "/images/Headshots/Ruhaan Vaidya.jpeg",
       "bio": "Ruhaan Vaidya is a freshman Finance and Economics major in the Smeal College of Business and the College of Liberal Arts from Jamison, PA. He currently serves as an Associate Analyst of the Healthcare Sector in the Nittany Lion Fund. After spending two semesters in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Ruhaan enjoys playing tennis, traveling, and collecting sneakers. He says that the Nittany Lion Fund has taught him strong time management and attention to detail skills, increasing personal accountability to his work.",
@@ -308,7 +389,7 @@
     {
       "slug": "fm-health-3",
       "name": "Chase Warnick",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Healthcare",
       "photo": "/images/Headshots/Chase Warnick.jpeg",
       "bio": "Chase Warnick is a freshman Finance and Accounting major in the Smeal College of Business from Seattle, WA. He currently serves as an Associate Analyst of the Healthcare Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Chase enjoys running and mixed martial arts. He says that the Nittany Lion Fund has helped him learn valuable financial skills and improved personal confidence through hard work and high expectations.",
@@ -318,7 +399,7 @@
     {
       "slug": "fm-energy-2",
       "name": "Tommy Flanagan",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Energy",
       "photo": "/images/Headshots/Tommy Flanagan.jpeg",
       "bio": "Thomas (Tommy) Flanagan is a freshman Finance major in the Smeal College of Business from Weston, MA. He currently serves as the Associate Fund Manager of the Energy Sector and a Director of Quarterly Reports in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Tommy enjoys lacrosse, Formula 1, and hockey. He says that the Nittany Lion Fund has taught him how to manage his time efficiently and hold himself accountable to deadlines, helping him complete deliverables effectively and on time.",
@@ -328,7 +409,7 @@
     {
       "slug": "fm-con-1",
       "name": "Colin Costello",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Consumer Discretionary",
       "photo": "/images/Headshots/Colin Costello.jpeg",
       "bio": "Colin Costello is a freshman Finance major in the Smeal College of Business from Easton, MA. He currently serves as the Associate Analyst of the Consumer Discretionary Sector and a Director of Portfolio Analytics in the Nittany Lion Fund. After spending two semesters in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Colin enjoys lifting weights, playing sports, and riding his bike. He says that the Nittany Lion Fund has helped him develop his communication skills and a strong sense of accountability.",
@@ -339,7 +420,7 @@
       "slug": "fm-ind-2",
       "name": "Ishmael (Zack) Limkakeng",
       "position": "Lead Portfolio Manager",
-      "sector": "Utilities",
+      "sector": "Information Technology",
       "photo": "/images/Headshots/Ishmael-Zack-Limkakeng_750x750_crop.jpg",
       "bio": "Ishmael (Zack) Limkakeng is a freshman Finance major in the Smeal College of Business from Pleasanton, CA. He currently serves as the Associate Analyst of Utilities in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Zack enjoys playing basketball, skiing, and traveling. He says that the Nittany Lion Fund has helped him develop strong attention to detail and effective time management skills.",
       "linkedin": "https://www.linkedin.com/in/zack-limkakeng-126a10393/",
@@ -348,7 +429,7 @@
     {
       "slug": "fm-mat-2",
       "name": "Grant Connelie",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Materials",
       "photo": "/images/Headshots/Grant Connelie.jpeg",
       "bio": "Grant Connelie is a freshman Finance major in the Smeal College of Business from Johnstown, NY. He currently serves as an Associate Analyst of the Materials Sector in the Nittany Lion Fund. After spending two semesters in the Penn State Investment Association, he has developed an interest in Sales and Trading. In his free time, Grant enjoys skiing, hiking, and listening to music. He says that the Nittany Lion Fund has helped him develop strong attention to detail and time management skills.",
@@ -368,7 +449,7 @@
     {
       "slug": "fm-ind-5",
       "name": "Ankith Yerra",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Utilities",
       "photo": "/images/Headshots/Ankith-Yerra.jpeg",
       "bio": "Ankith Yerra is a freshman Finance and Accounting major in the Smeal College of Business from West Chester, PA. He currently serves as the Associate Analyst of the Utilities Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Ankith enjoys playing golf, watching movies, traveling, and spending time with his friends and family. He says that the Nittany Lion Fund has taught him important analytical and attention to detail skills.",
@@ -378,7 +459,7 @@
     {
       "slug": "fm-ind-4",
       "name": "Nathan (Nate) Lyons",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Industrials",
       "photo": "/images/Headshots/Nate-Lyons.jpeg",
       "bio": "Nathan (Nate) Lyons is a freshman Finance major in the Smeal College of Business from San Mateo, CA. He currently serves as the Associate Analyst of the Industrials Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Nate enjoys golfing, skiing, and running. He says that the Nittany Lion Fund has taught him skills such as time management and the ability to work under pressure.",
@@ -398,7 +479,7 @@
     {
       "slug": "fm-fin-4",
       "name": "Christopher Fell",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Financials",
       "photo": "/images/Headshots/Chris Fell.jpeg",
       "bio": "Christopher (Chris) Fell is a freshman Finance major in the Smeal College of Business from Avondale, PA. He currently serves as an Associate Analyst of the Financials Sector in the Nittany Lion Fund. After spending two semesters in the Penn State Investment Association, he has developed an interest in sales and trading. In his free time, Chris enjoys motorsports, weightlifting, golf, and spending time with friends. He says that the Nittany Lion Fund has helped him develop effective time management skills while also teaching him lessons about the importance of personal accountability.",
@@ -408,12 +489,82 @@
     {
       "slug": "fm-fin-5",
       "name": "Emil Matikainen",
-      "position": "Associate Analyst",
+      "position": "Associate Portfolio Manager",
       "sector": "Financials",
       "photo": "/images/Headshots/Emil-Matikainen.JPG",
       "bio": "Emil Matikainen is a freshman Finance major in the Smeal College of Business from Helsinki, Finland. He currently serves as an Associate Analyst of the Financials Sector in the Nittany Lion Fund. After spending one semester in the Penn State Investment Association, he has developed an interest in investment banking. In his free time, Emil enjoys playing tennis and golf. He says that the Nittany Lion Fund has helped him develop strong attention-to-detail and analytical skills.",
       "linkedin": "https://www.linkedin.com/in/emil-matikainen-332429367/",
       "email": "emilmatikainen05@gmail.com"
+    },
+    {
+      "slug": "fm-comm-ishita",
+      "name": "Ishita Khetrapal",
+      "position": "Lead Portfolio Manager",
+      "sector": "Communication Services",
+      "photo": "/images/Headshots/Ishita-Khetrapal.jpg",
+      "bio": "Ishita Khetrapal is a junior Finance and Accounting major in the Smeal College of Business from Chester Springs, PA. She currently serves as the Lead Analyst of the Communication Services Sector in the Nittany Lion Fund after previously serving as a Director of Portfolio Analytics and the Associate Analyst of Communication Services. During this past summer, Ishita interned with the Nittany Lion Fund in the Communication Services Sector. In her free time, Ishita enjoys reading, playing tennis, and spending time with her family and friends. She says that the Nittany Lion Fund has helped her develop both analytical skills and the ability to work well under pressure.",
+      "linkedin": "https://www.linkedin.com/in/ishita-khetrapal-386991255/",
+      "email": "i.khetrapal@gmail.com"
+    },
+    {
+      "slug": "fm-energy-shravan",
+      "name": "Shravan Rajagopal",
+      "position": "Lead Portfolio Manager",
+      "sector": "Energy",
+      "photo": "/images/Headshots/Shravan-Rajagopal.jpg",
+      "bio": "Shravan Rajagopal is a junior Finance major in the Smeal College of Business from Exton, PA. He currently serves as a Lead Analyst of the Industrials Sector after previously serving as an Associate Analyst of the Energy Sector. During this past summer, Shravan interned with the Nittany Lion Fund in the Energy Sector, and after spending two semesters in the Nittany Lion Fund, he has developed an interest in investment banking. In his free time, Shravan enjoys watching football, playing pickleball, and spending time with friends and family. He says that the Nittany Lion Fund has helped him realize the importance of developing strong attention to detail and time management skills.",
+      "linkedin": "http://www.linkedin.com/in/shravanrajagopal",
+      "email": "shravraj21@gmail.com"
+    },
+    {
+      "slug": "fm-fin-coll",
+      "name": "Michael Coll",
+      "position": "Lead Portfolio Manager",
+      "sector": "Financials",
+      "photo": "/images/Headshots/Michael-Coll.jpg",
+      "bio": "",
+      "linkedin": "",
+      "email": ""
+    },
+    {
+      "slug": "fm-health-shradha",
+      "name": "Shradha Gudiseva",
+      "position": "Lead Portfolio Manager",
+      "sector": "Healthcare",
+      "photo": "/images/Headshots/Shradha-Gudiseva.jpg",
+      "bio": "Shradha Gudiseva is a junior Finance and Data Science major in the Smeal College of Business and the College of Information Sciences and Technology from Downingtown, PA. She currently serves as an Associate Analyst of Consumer Discretionary in the Nittany Lion Fund. During this past summer, Shradha interned with the Nittany Lion Fund in Healthcare, and after spending one semester in the Nittany Lion Fund, she has developed an interest in sales and trading. In his free time, Shradha enjoys playing the piano and guitar, painting, and hanging out with friends. She says that the Nittany Lion Fund has helped her build organizational and attention to detail skills.",
+      "linkedin": "https://www.linkedin.com/in/shradha-gudiseva-bba08032b/",
+      "email": "srishradha06@gmail.com"
+    },
+    {
+      "slug": "fm-ind-owen",
+      "name": "Owen Lundmark",
+      "position": "Lead Portfolio Manager",
+      "sector": "Industrials",
+      "photo": "/images/Headshots/Lundmark_Owen.jpg",
+      "bio": "Owen Lundmark is a junior Finance major in the Smeal College of Business from Downingtown, PA. He currently serves as the Lead Analyst of Materials in the Nittany Lion Fund. During this past summer, Owen interned with the Nittany Lion Fund in Materials, and after spending one semester in the Nittany Lion Fund, he has developed an interest in proprietary trading. In his free time, Owen enjoys snowboarding, fishing, and spending time with family. He says that the Nittany Lion Fund has taught him how to perform under pressure and efficiently manage his time.",
+      "linkedin": "https://www.linkedin.com/in/owen-lundmark-68aab7340",
+      "email": "owenlundmark1@gmail.com"
+    },
+    {
+      "slug": "fm-re-samshita",
+      "name": "Samshita Maram",
+      "position": "Lead Portfolio Manager",
+      "sector": "Real Estate",
+      "photo": "/images/Headshots/Samshita-Maram.jpg",
+      "bio": "Samshita Maram is a junior Finance and Accounting major in the Smeal College of Business from Chester Springs, PA. She currently serves as the Associate Analyst of Information Technology in the Nittany Lion Fund. During this past summer, Samshita interned with the Nittany Lion Fund in the Real Estate Sector and will be interning at EQT Real Estate this summer. In her free time, Samshita enjoys working out, watching Formula 1, and spending time with friends and family. She says that the Nittany Lion Fund has strengthened her attention to detail and analytical skills.",
+      "linkedin": "http://www.linkedin.com/in/samshita-maram",
+      "email": "maramsamshita@gmail.com"
+    },
+    {
+      "slug": "fm-util-lukas",
+      "name": "Lukas Rivardo",
+      "position": "Lead Portfolio Manager",
+      "sector": "Utilities",
+      "photo": "/images/Headshots/Lukas-Rivardo.jpg",
+      "bio": "Lukas Rivardo is a junior Finance major in the Smeal College of Business from Mount Pleasant, PA. He currently serves as the Lead Analyst of the Utilities Sector in the Nittany Lion Fund after previously serving as the Associate Analyst of the Utilities Sector. During this past summer, Lukas interned with the Nittany Lion Fund in the Utilities Sector, and after spending two semesters in the Nittany Lion Fund, he has developed an interest in investment banking. In his free time, Lukas enjoys watching football, riding dirtbikes, and skiing. He says that the Nittany Lion Fund has helped him develop strong attention to detail and organizational skills.",
+      "linkedin": "https://www.linkedin.com/in/lukas-rivardo-96678625b/",
+      "email": "lukerivardo21@gmail.com"
     }
   ],
   "_note": "Add headshots to /public/images/Headshots/ and set each 'photo' to the path (e.g. '/images/Headshots/John-Doe.jpg'). Fill 'name', 'bio', 'linkedin', and 'email' for each person."
