@@ -23,7 +23,7 @@ export function getStaticPaths() {
 
 const { person, otherRole } = Astro.props as {
   person: {
-    slug: string; name: string; position: string; photo: string;
+    slug: string; name: string; position: string; position2?: string; photo: string;
     bio: string; linkedin: string; email: string;
     group: string; backHash: string;
     sector?: string;
@@ -99,6 +99,11 @@ const hasEmail    = Boolean(person.email);
         <p class="mt-1 text-base font-medium" style="color: rgba(255,255,255,0.60);">
           {person.position}
         </p>
+        {person.position2 && (
+          <p class="mt-0.5 text-sm font-medium" style="color: rgba(255,255,255,0.48);">
+            {person.position2}
+          </p>
+        )}
         {otherRole && (
           <p class="mt-0.5 text-sm font-medium" style="color: rgba(255,255,255,0.42);">
             {otherRole.position}{otherRole.sector ? ` · ${otherRole.sector}` : ''}

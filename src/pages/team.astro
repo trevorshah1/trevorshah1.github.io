@@ -129,6 +129,11 @@ const personIcon = `<svg style="width:3.5rem;height:3.5rem;color:#9AA5B4" fill="
               <p class="mt-1 text-xs font-medium tracking-wide" style="color:rgba(255,255,255,0.60);">
                 {member.position}
               </p>
+              {(member as any).position2 && (
+                <p class="mt-0.5 text-xs font-medium" style="color:rgba(255,255,255,0.42);">
+                  {(member as any).position2}
+                </p>
+              )}
             </div>
             <!-- Headshot -->
             <div style="aspect-ratio:1/1;background:#D0D4DE;overflow:hidden;">
