@@ -566,6 +566,16 @@
       "bio": "Lukas Rivardo is a junior Finance major in the Smeal College of Business from Mount Pleasant, PA. He currently serves as the Lead Analyst of the Utilities Sector in the Nittany Lion Fund after previously serving as the Associate Analyst of the Utilities Sector. Next summer, he will be interning at PNC in the Investment Banking Division. In his free time, Lukas enjoys watching football, riding dirt bikes, and skiing. He says that the Nittany Lion Fund has helped him develop strong attention to detail and organizational skills.",
       "linkedin": "https://www.linkedin.com/in/lukas-rivardo-96678625b/",
       "email": "lukerivardo21@gmail.com"
+    },
+    {
+      "slug": "fm-ind-aditya",
+      "name": "Aditya (Adi) Patel",
+      "position": "Junior Advisor",
+      "sector": "Industrials",
+      "photo": "/images/Headshots/Patel_Aditya.jpg",
+      "bio": "Adi Patel is a junior Computer Science and Math major in the College of Engineering from Langhorne, PA. He currently serves as a Junior Advisor in the Nittany Lion Fund after previously serving as a Lead Analyst of the Industrials sector. During this past summer, Adi interned at IBM in the AI Engineering Division and will be interning at Bank of America in the Sales & Trading Division this summer. In his free time, Adi enjoys watching football, weightlifting, and spending time with friends. He says that the Nittany Lion Fund has helped him develop the ability to work well under pressure and consistently produce high-quality work.",
+      "linkedin": "https://www.linkedin.com/in/aditya-patel-2b8b07321/",
+      "email": "adipatel428@gmail.com"
     }
   ],
   "_note": "Add headshots to /public/images/Headshots/ and set each 'photo' to the path (e.g. '/images/Headshots/John-Doe.jpg'). Fill 'name', 'bio', 'linkedin', and 'email' for each person."
